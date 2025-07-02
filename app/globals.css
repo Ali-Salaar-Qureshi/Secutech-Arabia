@@ -1,42 +1,177 @@
+@import "tailwindcss";
+@font-face {
+  font-family: 'Nura';
+  src: url('/fonts/Nura.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+   /* Font family */
+  --font-urbanist: 'Urbanist', sans-serif;
+  --font-nura: 'Nura', sans-serif;
+  /* Font Sizes + Line Heights + Weights + Spacing (margin-bottom) */
+
+  /* Bold */
+  --font-large-bold-size: 20px;
+  --font-large-bold-line: 26px;
+  --font-large-bold-weight: 700;
+  --font-large-bold-spacing: 28px;
+
+  --font-medium-bold-size: 18px;
+  --font-medium-bold-line: 25.2px;
+  --font-medium-bold-weight: 700;
+  --font-medium-bold-spacing: 25.2px;
+
+  --font-normal-bold-size: 16px;
+  --font-normal-bold-line: 25.2px;
+  --font-normal-bold-weight: 700;
+  --font-normal-bold-spacing: 25.2px;
+
+  --font-small-bold-size: 14px;
+  --font-small-bold-line: 19.6px;
+  --font-small-bold-weight: 700;
+  --font-small-bold-spacing: 19.6px;
+
+  /* Regular */
+  --font-large-regular-size: 20px;
+  --font-large-regular-line: 32px;
+  --font-large-regular-weight: 400;
+  --font-large-regular-spacing: 28px;
+
+  --font-medium-regular-size: 18px;
+  --font-medium-regular-line: 30.2px;
+  --font-medium-regular-weight: 400;
+  --font-medium-regular-spacing: 25.2px;
+
+  --font-normal-regular-size: 16px;
+  --font-normal-regular-line: 24px;
+  --font-normal-regular-weight: 400;
+  --font-normal-regular-spacing: 22.4px;
+
+  --font-small-regular-size: 14px;
+  --font-small-regular-line: 19.6px;
+  --font-small-regular-weight: 400;
+  --font-small-regular-spacing: 19.6px;
+
+  /* Headings */
+  --heading-1-size: 56px;
+  --heading-1-line: 61.6px;
+
+  --heading-2-size: 48px;
+  --heading-2-line: 52.8px;
+
+  --heading-3-size: 40px;
+  --heading-3-line: 44px;
+
+  --heading-4-size: 32px;
+  --heading-4-line: 35.2px;
+
+  --heading-5-size: 24px;
+  --heading-5-line: 26.4px;
+
+  --heading-6-size: 20px;
+  --heading-6-line: 22px;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* === Bold === */
+.large-text-bold {
+  font-family: var(--font-urbanist);
+  font-size: var(--font-large-bold-size);
+  line-height: var(--font-large-bold-line);
+  font-weight: var(--font-large-bold-weight);
+  margin-bottom: var(--font-large-bold-spacing);
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.medium-text-bold {
+  font-family: var(--font-urbanist);
+  font-size: var(--font-medium-bold-size);
+  line-height: var(--font-medium-bold-line);
+  font-weight: var(--font-medium-bold-weight);
+  margin-bottom: var(--font-medium-bold-spacing);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.normal-text-bold {
+  font-family: var(--font-urbanist);
+  font-size: var(--font-normal-bold-size);
+  line-height: var(--font-normal-bold-line);
+  font-weight: var(--font-normal-bold-weight);
+  margin-bottom: var(--font-normal-bold-spacing);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.small-text-bold {
+  font-family: var(--font-urbanist);
+  font-size: var(--font-small-bold-size);
+  line-height: var(--font-small-bold-line);
+  font-weight: var(--font-small-bold-weight);
+  margin-bottom: var(--font-small-bold-spacing);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* === Regular === */
+.large-text-regular {
+  font-family: var(--font-urbanist);
+  font-size: var(--font-large-regular-size);
+  line-height: var(--font-large-regular-line);
+  font-weight: var(--font-large-regular-weight);
+  margin-bottom: var(--font-large-regular-spacing);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.medium-text-regular {
+  font-family: var(--font-urbanist);
+  font-size: var(--font-medium-regular-size);
+  line-height: var(--font-medium-regular-line);
+  font-weight: var(--font-medium-regular-weight);
+}
+
+.normal-text-regular {
+  font-family: var(--font-urbanist);
+  font-size: var(--font-normal-regular-size);
+  line-height: var(--font-normal-regular-line);
+  font-weight: var(--font-normal-regular-weight);
+  margin-bottom: var(--font-normal-regular-spacing);
+}
+
+.small-text-regular {
+  font-family: var(--font-urbanist);
+  font-size: var(--font-small-regular-size);
+  line-height: var(--font-small-regular-line);
+  font-weight: var(--font-small-regular-weight);
+  margin-bottom: var(--font-small-regular-spacing);
+}
+/*Headings*/
+.heading-1 {
+  font-family: var(--font-nura);
+  font-size: var(--heading-1-size);
+  line-height: var(--heading-1-line);
+}
+
+.heading-2 {
+  font-family: var(--font-nura);
+  font-size: var(--heading-2-size);
+  line-height: var(--heading-2-line);
+}
+
+.heading-3 {
+  font-family: var(--font-nura);
+  font-size: var(--heading-3-size);
+  line-height: var(--heading-3-line);
+}
+
+.heading-4 {
+  font-family: var(--font-nura);
+  font-size: var(--heading-4-size);
+  line-height: var(--heading-4-line);
+}
+
+.heading-5 {
+  font-family: var(--font-nura);
+  font-size: var(--heading-5-size);
+  line-height: var(--heading-5-line);
+}
+
+.heading-6 {
+  font-family: var(--font-nura);
+  font-size: var(--heading-6-size);
+  line-height: var(--heading-6-line);
 }
