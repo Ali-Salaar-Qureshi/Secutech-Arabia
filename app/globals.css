@@ -1,17 +1,21 @@
 @import "tailwindcss";
 @font-face {
-  font-family: 'Nura';
-  src: url('/fonts/Nura.ttf') format('truetype');
+  font-family: "Nura";
+  src: url("/fonts/Nura.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
-:root {
-   /* Font family */
-  --font-urbanist: 'Urbanist', sans-serif;
-  --font-nura: 'Nura', sans-serif;
-  /* Font Sizes + Line Heights + Weights + Spacing (margin-bottom) */
 
+:root {
+  /* Font family */
+  --font-urbanist: "Urbanist", sans-serif;
+  --font-nura: "Nura", sans-serif;
+  /* Font Sizes + Line Heights + Weights + Spacing (margin-bottom) */
+  --font-xl-bold-size: 32px;
+  --font-xl-bold-line: 30px;
+  --font-xl-bold-weight: 700;
+  --font-xl-bold-spacing: 0px;
   /* Bold */
   --font-large-bold-size: 20px;
   --font-large-bold-line: 26px;
@@ -72,7 +76,14 @@
 
   --heading-6-size: 20px;
   --heading-6-line: 22px;
+}
 
+.xl-text-bold {
+  font-family: var(--font-urbanist);
+  font-size: var(--font-xl-bold-size);
+  line-height: var(--font-xl-bold-line);
+  font-weight: var(--font-xl-bold-weight);
+  margin-bottom: var(--font-xl-bold-spacing);
 }
 
 /* === Bold === */
@@ -174,4 +185,10 @@
   font-family: var(--font-nura);
   font-size: var(--heading-6-size);
   line-height: var(--heading-6-line);
+}
+
+.swiper-pagination-bullet {
+  background-color: #5C5C5C !important;
+  width: 20px !important;
+  height: 20px !important;
 }

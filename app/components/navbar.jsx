@@ -29,7 +29,7 @@ export default function NavBar() {
   ];
 
   return (
-    <header className="mx-[20px] md:mx-[100px] mt-8 z-[9999]">
+    <header className="mx-[20px] md:mx-[100px] mt-8 z-[9999] max-sm:w-[85%]">
       <nav className="flex justify-between items-center">
         {/* Logo */}
         <img
@@ -123,9 +123,9 @@ export default function NavBar() {
             background: "linear-gradient(-27deg, #BE1522, #0F70B7)",
           }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="hidden lg:flex items-center justify-center rounded-full text-white font-medium py-[13px] px-[30px] gap-[10px]"
+          className="hidden lg:flex items-center justify-center rounded-full text-white font-medium gap-[10px]"
         >
-          <span className="text-center text-base leading-[26px]">
+          <span className="text-center text-base leading-[26px]  pt-[12px] pb-[15px] px-[30px]">
             Contact Us
           </span>
         </motion.button>

@@ -1,13 +1,16 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import NavBar from "./components/navbar";
-import Homepage from "./pages/HomePage/homepage";
+import './globals.css';
+import Homepage from "./pages/homepage";
+import NavBar from "./components/Navbar";
+
 
 export default function Home() {
   return (
   <>
   <NavBar />
   <Homepage />
+  
   </>
   );
 }
