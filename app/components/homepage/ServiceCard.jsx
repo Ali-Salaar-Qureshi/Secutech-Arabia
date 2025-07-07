@@ -1,7 +1,7 @@
 
 function ServiceCard(props){
     return(
-        <div className=" group h-[264px] w-[608px] max-sm:w-[350px] max-sm:h-[300px] bg-white rounded-[16px] max-sm:">
+        <div className=" group h-[264px] w-[608px] max-sm:w-[350px] max-sm:h-[300px] bg-white rounded-[16px] max-sm: hover:scale-101 transition duration-300">
             <div className="m-4 flex flex-row justify-between w-[570px] max-sm:w-[320px]">
                 <img src={props.img1} alt={props.alt} className="h-8 cursor-pointer"/>
                 <button className=" bg-[#BE1522] hover:bg-[#006dd3] group-hover:bg-[#0E5B96] rounded-full cursor-pointer transition duration-300">

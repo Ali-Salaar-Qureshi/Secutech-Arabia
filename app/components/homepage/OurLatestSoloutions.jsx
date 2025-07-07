@@ -12,7 +12,7 @@ function OurLatestSoloutions() {
           challenges with innovation, compliance, and efficiency.
         </p>
         <div className="flex flex-row gap-4 max-sm:flex-col">
-          <button className="py-[11px] px-[20px] rounded-[100px] bg-[#EEEEEE] normal-text-bold text-[#092C4C] max-sm:w-52">
+          <button className="py-[11px] px-[20px] rounded-[100px] bg-[#EEEEEE] normal-text-bold text-[#092C4C] max-sm:w-52 hover:bg-[#e5e5e5] transition duration-300">
             Security soloutions
           </button>
           <button className="py-[11px] px-[20px] rounded-[100px]  normal-text-bold text-[#5C5C5C] max-sm:w-52">
@@ -22,7 +22,7 @@ function OurLatestSoloutions() {
         <div className="flex flex-row gap-10  max-sm:flex-col">
           <Card
             img="/images/Access control.png"
-            alt = "Access control images"
+            alt="Access control images"
             heading="ACCESS CONTROL SYSTEMS"
             text="Scalable access control solutions that ensure secure, 
             flexible entry management soloutions across facilities. They offer 
@@ -31,7 +31,7 @@ function OurLatestSoloutions() {
           />
           <Card
             img="/images/Security camera.png"
-            alt = "Security camera image"
+            alt="Security camera image"
             heading="Video Surveillance Systems"
             text="Smart surveillance solutions that deter crime, 
             enhance monitoring, and support investigations through 

@@ -27,9 +27,9 @@ const bottomLogos = [
   "/images/client-slider/client19.png",
 ];
 
-export default function DualMarqueeSlider() {
+export default function ClientCarousel() {
   return (
-    <div className="bg-white py-10 text-center w-full overflow-hidden">
+    <div className="bg-white py-8 text-center w-full overflow-hidden">
       <h1 className="heading-3 text-[#092C4C] my-8">OUR CLIENTS</h1>
 
       {/* Top Row */}

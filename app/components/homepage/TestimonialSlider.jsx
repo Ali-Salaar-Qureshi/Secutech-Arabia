@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-import ClientTestimonialCard from "./ClientTestimonialCard";
+import TestimonialCard from "./ClientTestimonialCard";
 
 const testimonials = [
   {
@@ -50,7 +50,8 @@ export default function TestimonialSlider() {
       if (swiper.activeIndex > 0) swiper.slideTo(swiper.activeIndex - 1);
     };
     const goNext = () => {
-      if (swiper.activeIndex < testimonials.length - 1) swiper.slideTo(swiper.activeIndex + 1);
+      if (swiper.activeIndex < testimonials.length - 1)
+        swiper.slideTo(swiper.activeIndex + 1);
     };
 
     prevBtn?.addEventListener("click", goPrev);
@@ -87,17 +88,16 @@ export default function TestimonialSlider() {
       >
         {testimonials.map((t, i) => (
           <SwiperSlide
-  key={i}
-  className={`
+            key={i}
+            className={`
     shrink-0 flex justify-center transition-all duration-500 ease-in-out
     ${i === activeIndex ? "opacity-100 scale-100" : "opacity-40 scale-95"}
   `}
->
-  <div className="w-full max-w-[592px] px-4">
-    <ClientTestimonialCard {...t} />
-  </div>
-</SwiperSlide>
-
+          >
+            <div className="w-full max-w-[592px] px-4">
+              <TestimonialCard {...t} />
+            </div>
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>

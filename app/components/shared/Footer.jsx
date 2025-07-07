@@ -47,7 +47,7 @@ function Footer() {
                   <div className="w-[120px] h-[56px] bg-white rounded-[8px]"></div>
                 </div>
               </div>
-              <div className="flex flex-row gap-2 mt-2 max-sm:justify-center">
+              <div className="flex flex-row gap-2 max-sm:justify-center">
                 <div className="w-[120px] h-[56px] bg-white rounded-[8px]"></div>
                 <div className="w-[120px] h-[56px] bg-white rounded-[8px]"></div>
               </div>
@@ -96,10 +96,10 @@ function Footer() {
                   title: "Follow Us",
                   content: (
                     <div className="flex gap-2 justify-center sm:justify-start">
-                      <a href="#"><img src="/images/icons/ytIcon.png" className="hover:scale-95 transition duration-300" alt="YouTube" /></a>
-                      <a href="#"><img src="/images/icons/fbIcon.png" className="hover:scale-95 transition duration-300" alt="Facebook" /></a>
-                      <a href="#"><img src="/images/icons/InsIcon.png" className="hover:scale-95 transition duration-300" alt="Instagram" /></a>
-                      <a href="#"><img src="/images/icons/xIcon.png" className="hover:scale-95 transition duration-300" alt="Twitter" /></a>
+                      <a href="https://www.youtube.com/channel/UCz8KBdA0xz3dSYU8N2cnfLw"><img src="/images/icons/ytIcon.png" className="hover:scale-95 transition duration-300" alt="YouTube" /></a>
+                      <a href="https://www.facebook.com/secutecharabia.pk/"><img src="/images/icons/fbIcon.png" className="hover:scale-95 transition duration-300" alt="Facebook" /></a>
+                      <a href="https://www.instagram.com/p/DI4Ws87IYQr/"><img src="/images/icons/InsIcon.png" className="hover:scale-95 transition duration-300" alt="Instagram" /></a>
+                      <a href="https://x.com/secutecharabia"><img src="/images/icons/xIcon.png" className="hover:scale-95 transition duration-300" alt="Twitter" /></a>
                     </div>
                   ),
                 },

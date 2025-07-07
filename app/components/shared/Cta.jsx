@@ -11,17 +11,13 @@ function CallToAction() {
             bring it to life with next-gen tech.
           </p>
         </div>
-        <div className="flex flex-row items-center gap-3  max-sm:mb-6 max-sm:flex-col max-sm:gap-10">
-          <button>
-            <span className="text-white px-[32px] py-[13px] border-1 border-white rounded-full medium-text-bold hover:bg-[#1D8FDA] hover:border-[#1D8FDA] transition duration-300 ">
-              Book a consultation
-            </span>
-          </button>
-          <button>
-            <span className="text-[#092C4C] px-[32px] py-[13px] bg-white rounded-full medium-text-bold hover:bg-[#1D8FDA] transition duration-300 ">
-              Contact Us
-            </span>
-          </button>
+        <div className="flex flex-row items-center gap-3  max-sm:mb-6 max-sm:flex-col max-sm:gap-6">
+          <button className="w-[193px] h-[52]  text-[#0E5B96] rounded-[100px] border-[#0E5B96] border-[1px] hover:bg-[#0E5B96] hover:text-white  transition duration-400">
+          <span className="medium-text-bold ">Book a consultation</span>
+        </button>
+          <button className="w-[173px] h-[52]  text-white rounded-[100px] hover:text-white border-[#0E5B96] border-[1px] bg-[#0E5B96] hover:bg-[#eeeeee00]  transition duration-400">
+          <span className="medium-text-bold ">Contact Us</span>
+        </button>
         </div>
       </div>
     </section>

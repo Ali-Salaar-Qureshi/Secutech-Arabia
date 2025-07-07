@@ -92,7 +92,7 @@ function LandingSection() {
                 src={src}
                 alt={`img-${index}`}
                 className="h-[58px] w-[144px] mx-4 rounded-xl 
-                           sm:h-[73px] sm:w-[145px]
+                           sm:h-[53px] sm:w-[125px]
                            max-sm:h-[40px] max-sm:w-[100px] max-sm:mx-2"
               />
             ))}

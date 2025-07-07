@@ -7,13 +7,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const slides = [
-  "/images/CarouselImage.png",
-  "/images/CarouselImage.png",
-  "/images/CarouselImage.png",
-  "/images/CarouselImage.png",
-  "/images/CarouselImage.png",
-  "/images/CarouselImage.png",
-  "/images/CarouselImage.png",
+  "/images/project1.jpg",
+  "/images/project2.jpg",
+  "/images/project3.jpg",
 ];
 
 export default function OurProjects() {
@@ -102,7 +98,7 @@ export default function OurProjects() {
                   className="rounded-xl w-full h-auto object-cover"
                 />
                 {/* Bottom-right button */}
-                <button className="absolute bottom-30 right-10 p-4 bg-white text-white text-sm rounded-full hover:bg-[#e0e0e0] transition max-sm:bottom-20 max-sm:p-2.5 max-sm:right-4">
+                <button className="absolute bottom-8 right-10 p-4 bg-white text-white text-sm rounded-full hover:bg-[#e0e0e0] transition max-sm:bottom-11 max-sm:p-2.5 max-sm:right-4">
                   <img src="/images/icons/black-arrow.png" alt="" className="text-black"/>
                 </button>
               </div>
@@ -115,8 +111,8 @@ export default function OurProjects() {
           {slides.map((_, i) => (
             <div
               key={i}
-              className={`h-2 rounded-full transition-all duration-150 ${
-                i === activeIndex ? "w-6 bg-gray-600" : "w-3 bg-gray-300"
+              className={`h-2 rounded-[3px] transition-all duration-150 ${
+                i === activeIndex ? "w-6 bg-[#BE1522]" : "w-3 bg-gray-300"
               }`}
             />
           ))}

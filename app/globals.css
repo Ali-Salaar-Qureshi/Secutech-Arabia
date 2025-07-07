@@ -38,6 +38,11 @@
   --font-small-bold-spacing: 19.6px;
 
   /* Regular */
+  --font-xl-regular-size: 24px;
+  --font-xl-regular-line: 40px;
+  --font-xl-regular-weight: 400;
+  --font-xl-regular-spacing: 28px;
+
   --font-large-regular-size: 20px;
   --font-large-regular-line: 32px;
   --font-large-regular-weight: 400;
@@ -120,6 +125,15 @@
 }
 
 /* === Regular === */
+.xl-text-regular {
+  font-family: var(--font-urbanist);
+  font-size: var(--font-xl-regular-size);
+  line-height: var(--font-xl-regular-line);
+  font-weight: var(--font-xl-regular-weight);
+  margin-bottom: var(--font-xl-regular-spacing);
+}
+
+
 .large-text-regular {
   font-family: var(--font-urbanist);
   font-size: var(--font-large-regular-size);

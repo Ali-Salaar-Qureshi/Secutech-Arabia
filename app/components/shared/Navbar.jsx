@@ -22,14 +22,14 @@ export default function NavBar() {
   ];
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About Us", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
     { name: "Partners", href: "#" },
     { name: "Solutions", href: "#" },
   ];
 
   return (
-    <header className="mx-[20px] md:mx-[100px] mt-8 z-[9999] max-sm:w-[85%]">
+    <header className="mx-[20px] md:mx-[100px] mt-8 mb-6 z-[9999] max-sm:w-[85%]">
       <nav className="flex justify-between items-center">
         {/* Logo */}
         <img
@@ -125,7 +125,7 @@ export default function NavBar() {
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="hidden lg:flex items-center justify-center rounded-full text-white font-medium gap-[10px]"
         >
-          <span className="text-center text-base leading-[26px]  pt-[12px] pb-[15px] px-[30px]">
+          <span className="text-center text-base leading-[26px]  pt-[12px] pb-[15px] px-[40px]">
             Contact Us
           </span>
         </motion.button>
