@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function TeamCard({ wideImg, title, description }) {
+export default function TeamCard({ Img, title, description }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ export default function TeamCard({ wideImg, title, description }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <Image
-        src={wideImg}
+        src={Img}
         alt={title}
         width={500}
         height={300}

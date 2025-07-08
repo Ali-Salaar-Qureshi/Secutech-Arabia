@@ -25,7 +25,6 @@ export default function NavBar() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Partners", href: "#" },
-    { name: "Solutions", href: "#" },
   ];
 
   return (
@@ -115,6 +114,7 @@ export default function NavBar() {
         </ul>
 
         {/* contact us button */}
+        <a href="/contact">
         <motion.button
           initial={{
             background: "linear-gradient(-27deg, #0F70B7, #BE1522)",
@@ -129,6 +129,7 @@ export default function NavBar() {
             Contact Us
           </span>
         </motion.button>
+        </a>
 
         {/* hamburger menu */}
         <div className="lg:hidden text-3xl text-[#0F70B7]">
@@ -197,6 +198,7 @@ export default function NavBar() {
               </li>
 
               <li>
+                <a href="/contact">
                 <motion.button
                   initial={{
                     background:
@@ -211,6 +213,7 @@ export default function NavBar() {
                 >
                   Contact Us
                 </motion.button>
+                </a>
               </li>
             </ul>
           </motion.div>

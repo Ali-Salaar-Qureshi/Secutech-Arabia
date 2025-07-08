@@ -14,8 +14,7 @@ function OurTeam() {
         <div className="flex flex-row gap-5 max-sm:flex-col max-sm:items-center">
         <div className="w-[326px]">
         <TeamCard
-          shortImg="/images/team-leaders-short.png"
-          wideImg="/images/team-leaders-wide.png"
+          Img="/images/team-leaders-wide.png"
           title="Team Leaders"
           description=
           {`The Team-Admin SecuTech is commited to deliver an innovative, professional,
@@ -25,24 +24,31 @@ function OurTeam() {
         </div>
         <div className="flex flex-row gap-5">
         <TeamCard
-          shortImg="/images/team-leaders-short.png"
-          wideImg="/images/sales-tigers.png"
+          Img="/images/sales-tigers.webp"
           title="Sale Tigers"
           description=
-          {`The Team-Admin SecuTech is commited to deliver an innovative, professional,
-            high quality and efficient administration services with the leadership 
-            qualities both to the employees and the honourable clients.`}
+          {`Agile and client-focused experts who turn opportunities into growth.`}
         />
         <TeamCard
-          shortImg="/images/team-leaders.png"
-          wideImg="/images/experienced-technical-team.png"
+          Img="/images/technical-team.webp"
           title="Technical Team"
           description=
-          {`The Team-Admin SecuTech is commited to deliver an innovative, professional,
-            high quality and efficient administration services with the leadership 
-            qualities both to the employees and the honourable clients.`}
+          {`Certified professionals delivering reliable, scalable, and secure solutions.`}
         />
         </div>
+        </div>
+      </div>
+      <div className="flex flex-row items-center gap-35 mt-25 max-sm:flex-col max-sm:gap-10 max-sm:rounded-2xl max-sm:pt-4 max-sm:w-98 max-sm:items-center max-sm:justify-center max-sm:mx-10">
+        <div className="flex flex-col ">
+            <h3 className="heading-3 text-[#092C4C]">OUR PRESENCE</h3>
+            <p className="normal-text-regular text-[#5C5C5C] w-130 mt-4 max-sm:w-80">Full-Spectrum Technology Services Tailored for Growth Full-Spectrum Technology
+               Services Tailored for Growth Full-Spectrum Technology Services Tailored for 
+               GrowthFull-Spectrum Technology Services Tailored for GrowthFull-Spectrum 
+               Technology Services Tailored for GrowthFull-Spectrum Technology Services 
+               Tailored for GrowthFull-Spectrum Technology Services Tailored for.</p>
+        </div>
+        <div className="mx-6">
+            <img src="/images/presence-map.png" alt="Presence map" className="max-sm:w-[90%]" />
         </div>
       </div>
     </section>
