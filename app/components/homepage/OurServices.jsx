@@ -2,7 +2,7 @@ import ServiceCard from "./ServiceCard";
 
 function OurServices() {
   return (
-    <div className="flex flex-col items-center w-full h-[80px] bg-[url('/images/our-services.jpg')] mt-10 max-sm:px-12 bg-cover max-sm:h-auto max-sm:pb-10">
+    <div className="flex flex-col items-center w-full h-[800px] bg-[url('/images/our-services.jpg')] mt-10 max-sm:px-12 bg-cover max-sm:h-auto max-sm:pb-10">
       <div className="flex flex-col items-center text-white mt-[60px] ">
         <h3 className="heading-3 mb-[22px]">OUR SERVICES</h3>
         <p className="normal-text-regular">
