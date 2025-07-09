@@ -37,7 +37,7 @@ export default function ClientCarousel() {
         <Marquee
           direction="left"
           speed={70}
-          gradient={false}
+          gradient={true}
           pauseOnHover={false}
           className="gap-x-1"
         >
@@ -60,7 +60,7 @@ export default function ClientCarousel() {
       <Marquee
   direction="right"
   speed={70}
-  gradient={false}
+  gradient={true}
   pauseOnHover={false}
   className="!flex !items-center"
 >

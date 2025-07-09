@@ -15,10 +15,10 @@ export default function NavBar() {
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const services = [
-    "Branding & UI/UX Design",
-    "Ecommerce Solutions",
-    "Product Development",
-    "Digital Marketing",
+    { name: "Branding & UI/UX Design", href: "/services1" },
+    { name: "Ecommerce Solutions", href: "/services2" },
+    { name: "Product Development", href: "/services3" },
+    { name: "Digital Marketing", href: "/services4" },
   ];
 
   const navLinks = [
@@ -41,16 +41,11 @@ export default function NavBar() {
         <ul className="hidden lg:flex flex-row gap-[40px] text-[#092c4c] medium-text-regular items-center">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <a href={link.href}>
-                {link.name}
-                {link.name === "Solutions" && (
-                  <IoChevronDown className="text-[16px] inline mx-1" />
-                )}
-              </a>
+              <a href={link.href}>{link.name}</a>
             </li>
           ))}
 
-          {/* Dropdown hover */}
+          {/* Services Dropdown */}
           <li
             className="relative group"
             onMouseEnter={() => setShowServices(true)}
@@ -73,7 +68,7 @@ export default function NavBar() {
                   transition={{ duration: 0.2 }}
                   className="absolute top-full left-0 mt-2 w-72 bg-white rounded-md py-2 z-50 shadow-lg"
                 >
-                  {services.map((item, index) => (
+                  {services.map((service, index) => (
                     <li
                       key={index}
                       onMouseEnter={() => setHoveredItem(index)}
@@ -91,20 +86,19 @@ export default function NavBar() {
                           <IoArrowForwardOutline className="text-lg" />
                         </motion.span>
                       )}
-
-                      <motion.span
+                      <motion.a
+                        href={service.href}
                         animate={{
                           x: hoveredItem === index ? 8 : 0,
-                          color:
-                            hoveredItem === index
-                              ? "#BE1522"
-                              : "#092c4c",
+                          color: hoveredItem === index
+                            ? "#BE1522"
+                            : "#092c4c",
                         }}
                         transition={{ duration: 0.3 }}
                         className="text-base"
                       >
-                        {item}
-                      </motion.span>
+                        {service.name}
+                      </motion.a>
                     </li>
                   ))}
                 </motion.ul>
@@ -113,35 +107,33 @@ export default function NavBar() {
           </li>
         </ul>
 
-        {/* contact us button */}
+        {/* Contact Us Button */}
         <a href="/contact">
-        <motion.button
-          initial={{
-            background: "linear-gradient(-27deg, #0F70B7, #BE1522)",
-          }}
-          whileHover={{
-            background: "linear-gradient(-27deg, #BE1522, #0F70B7)",
-          }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="hidden lg:flex items-center justify-center rounded-full text-white font-medium gap-[10px]"
-        >
-          <span className="text-center text-base leading-[26px]  pt-[12px] pb-[15px] px-[40px]">
-            Contact Us
-          </span>
-        </motion.button>
+          <motion.button
+            initial={{
+              background: "linear-gradient(-27deg, #0F70B7, #BE1522)",
+            }}
+            whileHover={{
+              background: "linear-gradient(-27deg, #BE1522, #0F70B7)",
+            }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="hidden lg:flex items-center justify-center rounded-full text-white font-medium gap-[10px]"
+          >
+            <span className="text-center text-base leading-[26px] pt-[12px] pb-[15px] px-[40px]">
+              Contact Us
+            </span>
+          </motion.button>
         </a>
 
-        {/* hamburger menu */}
+        {/* Hamburger */}
         <div className="lg:hidden text-3xl text-[#0F70B7]">
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <IoClose /> : <IoMenu />}
           </button>
         </div>
       </nav>
 
-      {/* mobile menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -161,7 +153,7 @@ export default function NavBar() {
                 <details>
                   <summary className="cursor-pointer">Services</summary>
                   <ul className="ml-4 mt-2 flex flex-col gap-2 text-sm">
-                    {services.map((item, index) => (
+                    {services.map((service, index) => (
                       <li
                         key={index}
                         onMouseEnter={() => setHoveredItem(index)}
@@ -179,7 +171,8 @@ export default function NavBar() {
                             <IoArrowForwardOutline className="text-base" />
                           </motion.span>
                         )}
-                        <motion.span
+                        <motion.a
+                          href={service.href}
                           animate={{
                             x: hoveredItem === index ? 8 : 0,
                             color:
@@ -189,8 +182,8 @@ export default function NavBar() {
                           }}
                           transition={{ duration: 0.3 }}
                         >
-                          {item}
-                        </motion.span>
+                          {service.name}
+                        </motion.a>
                       </li>
                     ))}
                   </ul>
@@ -199,20 +192,20 @@ export default function NavBar() {
 
               <li>
                 <a href="/contact">
-                <motion.button
-                  initial={{
-                    background:
-                      "linear-gradient(-27deg, #0F70B7, #BE1522)",
-                  }}
-                  whileHover={{
-                    background:
-                      "linear-gradient(-27deg, #BE1522, #0F70B7)",
-                  }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="mt-3 w-50 rounded-full text-white py-[13px] px-[30px]"
-                >
-                  Contact Us
-                </motion.button>
+                  <motion.button
+                    initial={{
+                      background:
+                        "linear-gradient(-27deg, #0F70B7, #BE1522)",
+                    }}
+                    whileHover={{
+                      background:
+                        "linear-gradient(-27deg, #BE1522, #0F70B7)",
+                    }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="mt-3 w-50 rounded-full text-white py-[13px] px-[30px]"
+                  >
+                    Contact Us
+                  </motion.button>
                 </a>
               </li>
             </ul>

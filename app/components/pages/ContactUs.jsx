@@ -1,6 +1,6 @@
 import NavBar from "../shared/Navbar";
 import ContactLanding from "../contactpage/ContactLanding";
-import ContactForm from "../contactpage/ContactForm";
+import ContactSection from "../contactpage/ContactSection";
 import Footer from "../shared/Footer";
 
 function ContactUs(){
@@ -8,7 +8,7 @@ function ContactUs(){
         <main>
             <NavBar />
             <ContactLanding />
-            <ContactForm />
+            <ContactSection />
             <Footer />
         </main>
     );

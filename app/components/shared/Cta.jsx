@@ -15,9 +15,11 @@ function CallToAction() {
           <button className="w-[193px] h-[52]  text-[#0E5B96] rounded-[100px] border-[#0E5B96] border-[1px] hover:bg-[#0E5B96] hover:text-white  transition duration-400">
           <span className="medium-text-bold ">Book a consultation</span>
         </button>
+        <a href="/contact">
           <button className="w-[173px] h-[52]  text-white rounded-[100px] hover:text-white border-[#0E5B96] border-[1px] bg-[#0E5B96] hover:bg-[#eeeeee00]  transition duration-400">
           <span className="medium-text-bold ">Contact Us</span>
         </button>
+        </a>
         </div>
       </div>
     </section>
