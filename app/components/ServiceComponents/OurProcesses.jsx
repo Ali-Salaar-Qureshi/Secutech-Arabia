@@ -13,7 +13,7 @@ function OurProcesses(props) {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="w-[187px] h-[208px] pt-[24px] pl-[16px] rounded-[8px] hover:scale-[105%] transition duration-300 max-sm:w-[280px] cursor-pointer"
+            className="w-[207px] h-[208px] pt-[24px] pl-[16px] rounded-[8px] hover:scale-[105%] transition duration-300 max-sm:w-[280px] cursor-pointer"
             style={{
               backgroundImage: `url('${card.img}')`,
               backgroundRepeat: "no-repeat",
