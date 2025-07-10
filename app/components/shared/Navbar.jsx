@@ -25,6 +25,7 @@ export default function NavBar() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Partners", href: "/partners" },
+    { name: "Soloutions", href: "/" },
   ];
 
   return (
@@ -100,6 +101,7 @@ export default function NavBar() {
                         {service.name}
                       </motion.a>
                     </li>
+                    
                   ))}
                 </motion.ul>
               )}

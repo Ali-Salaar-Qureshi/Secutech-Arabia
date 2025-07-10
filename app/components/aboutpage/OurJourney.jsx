@@ -29,13 +29,15 @@ function OurJourney() {
               transformation, playing an active role in realizing Saudi Vision
               2030 & Beyond.
             </p>
-            <div className="flex flex-row gap-[24px] mt-16 max-sm:flex-col">
+            <div className="flex flex-row gap-[24px] mt-16 max-sm:flex-col max-sm:items-center">
               <button className="bg-[#0E5B96] rounded-full px-[32px] py-[13px] hover:bg-[#116cb1] transition duration-300">
                 <span className="medium-text-bold text-white">View Our Services</span>
               </button>
+              <a href="/contact">
               <button className="border-[1px] text-[#0E5B96] border-[#0E5B96] rounded-full px-[40px] py-[13px] hover:bg-[#0E5B96] hover:text-white transition duration-300">
                 <span className="medium-text-bold " >Contact Us</span>
               </button>
+              </a>
             </div>
           </div>
         </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { FiChevronDown } from 'react-icons/fi';
 
 const servicesList = ["Branding", "Product Development", "UI/UX"];
 
@@ -12,7 +11,7 @@ export default function QuoteForm() {
     phone: '',
     location: '',
     company: '',
-    message: '',
+    projectDetails: '',
     services: [],
   });
 
@@ -47,7 +46,7 @@ export default function QuoteForm() {
 
       if (res.ok) {
         setStatus('Message sent!');
-        setFormData({ name: '', email: '', phone: '', location: '', company: '', message: '', services: [] });
+        setFormData({ name: '', email: '', phone: '', location: '', company: '', projectDetails: '', services: [] });
       } else {
         setStatus('Failed to send.');
       }
@@ -63,16 +62,17 @@ export default function QuoteForm() {
   );
 
   return (
-    <div className='flex flex-col w-full items-center mb-20'>
-    <div className="bg-[#F5F5F5] w-[1125px] max-sm:w-[360px] max-sm:items-center p-15 rounded-[16px] grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
+    <div className="flex justify-center w-full px-4 mb-20">
+  <div className="bg-[#F5F5F5] w-full max-w-[1225px] p-6 sm:p-10 rounded-[16px] grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+
       
       {/* Left Title */}
-      <div className="text-[#092C4C] heading-3 leading-tight">
-        READY <br /> TO GET <br /> STARTED?
+      <div className="text-[#092C4C] heading-3 max-sm:text-center leading-tight">
+        READY <br className="max-sm:hidden" /> TO GET <br className="max-sm:hidden" /> STARTED?
       </div>
 
       {/* Form Section */}
-      <form onSubmit={handleSubmit} className="space-y-5 text-sm w-full max-sm:w-[290px]">
+      <form onSubmit={handleSubmit} className="space-y-5 px-5 text-sm w-[600px] max-sm:mr-8 max-sm:w-[310px]">
         <h2 className="font-semibold large-text-bold text-[#092C4C]">Request / Get a Quote:</h2>
 
         {/* Name & Email */}
@@ -87,7 +87,7 @@ export default function QuoteForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full p-3 border placeholder:text-[#5C5C5C] py-4 bg-white border-none rounded-[12px]"
+              className="w-full p-3 placeholder:text-[#5C5C5C] py-4 bg-white rounded-[12px]"
             />
           </div>
           <div className="w-full md:w-1/2">
@@ -100,7 +100,7 @@ export default function QuoteForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full p-3 border placeholder:text-[#5C5C5C] py-4 bg-white border-none rounded-[12px]"
+              className="w-full p-3 placeholder:text-[#5C5C5C] py-4 bg-white rounded-[12px]"
             />
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function QuoteForm() {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full p-3 border placeholder:text-[#5C5C5C] py-4 bg-white border-none rounded-[12px]"
+              className="w-full p-3 placeholder:text-[#5C5C5C] py-4 bg-white rounded-[12px]"
             />
           </div>
           <div className="w-full md:w-1/2">
@@ -130,7 +130,7 @@ export default function QuoteForm() {
               value={formData.location}
               onChange={handleChange}
               required
-              className="w-full p-3 border placeholder:text-[#5C5C5C] py-4 bg-white border-none rounded-[12px]"
+              className="w-full p-3 placeholder:text-[#5C5C5C] py-4 bg-white rounded-[12px]"
             />
           </div>
         </div>
@@ -146,7 +146,7 @@ export default function QuoteForm() {
             value={formData.company}
             onChange={handleChange}
             required
-            className="w-full p-3 border placeholder:text-[#5C5C5C] py-4 bg-white border-none rounded-[12px]"
+            className="w-full p-3 placeholder:text-[#5C5C5C] py-4 bg-white rounded-[12px]"
           />
         </div>
 
@@ -175,10 +175,10 @@ export default function QuoteForm() {
         <div>
           <RequiredLabel htmlFor="message">Message</RequiredLabel>
           <textarea
-            name="message"
-            id="message"
+            name="projectDetails"
+            id="projectDetails"
             placeholder="Enter your text"
-            value={formData.message}
+            value={formData.projectDetails}
             onChange={handleChange}
             required
             className="w-full p-3 h-[128px] placeholder:text-[#5C5C5C] py-4 bg-white border-none rounded-[12px]"
@@ -188,7 +188,7 @@ export default function QuoteForm() {
         {/* Submit */}
         <button
           type="submit"
-          className="w-full bg-[#004AAD] text-white py-3 rounded-full font-semibold hover:bg-[#003a8c] transition"
+          className="w-full bg-[#0E5B96] text-white py-3 rounded-full font-semibold hover:bg-[#1c71b1] transition"
         >
           Send
         </button>

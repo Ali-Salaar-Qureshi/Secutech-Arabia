@@ -15,6 +15,7 @@ function OurServices() {
             img1="/images/icons/pen-icon.png"
             alt="Pen icon"
             title="Branding & UI/UX"
+            link="/services1"
             text={`Craft a memorable brand with cohesive visuals, messaging,
                         and identity systems. We help you stand out and connect
                          with your audience across all touchpoints.`}
@@ -23,6 +24,7 @@ function OurServices() {
             img1="/images/icons/shopping-basket-icon.png"
             alt="Basket icon"
             title="E-Commerce Solutions"
+            link="/services2"
             text={`Build secure, scalable online stores optimized for performance and conversions.
                  We offer full-stack development and integrations to grow your digital retail presence.`}
           />
@@ -33,6 +35,7 @@ function OurServices() {
             img1="/images/icons/web-design-icon.png"
             alt="Web design icon"
             title="Custom Product Development"
+            link="/services3"
             text={`From idea to launch, we turn concepts into reliable, 
                         high-performing digital products. 
                         Our agile development approach ensures 
@@ -42,6 +45,7 @@ function OurServices() {
             img1="/images/icons/megaphone-icon.png"
             alt="Megaphone icon"
             title="Digital Marketing"
+            link="/services4"
             text={`Drive traffic, generate leads, and grow engagement with
                 strategic digital marketing. We blend content, SEO, and paid 
                 media to boost your online visibility and ROI.`}

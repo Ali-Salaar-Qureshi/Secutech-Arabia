@@ -16,14 +16,14 @@ function ServiceDetail(props) {
         {Array.from({ length: Math.ceil(cards.length / 4) }).map((_, rowIndex) => (
           <div
             key={rowIndex}
-            className="flex flex-row max-sm:w-[750px] max-sm:items-center max-sm:flex-col max-sm:gap-2 gap-5"
+            className="flex flex-row max-sm:w-[750px] max-sm:items-center max-sm:flex-col max-sm:gap-5 gap-5"
           >
             {cards
               .slice(rowIndex * 4, rowIndex * 4 + 4)
               .map((card, index) => (
                 <div
                   key={index}
-                  className="min-w-[292px] max-w-[50%] min-h-[169px] bg-[#EEEEEE] rounded-[8px] hover:scale-[105%] transition duration-300"
+                  className="min-w-[292px] max-w-[50%] hover:cursor-pointer min-h-[169px]  bg-[#EEEEEE] rounded-[8px] hover:scale-[105%] transition duration-300"
                 >
                   <div className="flex flex-col pt-[24px] pl-[16px]">
                     <h3 className="large-text-bold w-[221px] max-sm:w-[200px] text-[#092C4C]">

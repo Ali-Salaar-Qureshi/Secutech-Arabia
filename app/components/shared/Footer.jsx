@@ -10,16 +10,16 @@ function Footer() {
                 <h1 className="normal-text-bold text-white">Our Services</h1>
                 <ul className="list-none small-text-regular space-y-3">
                   <li className="text-[#EEEEEE]">
-                    <a href="#">Branding & UI/UX Design</a>
+                    <a href="/services1">Branding & UI/UX Design</a>
                   </li>
                   <li className="text-[#EEEEEE]">
-                    <a href="#">Product Development</a>
+                    <a href="/services3">Product Development</a>
                   </li>
                   <li className="text-[#EEEEEE]">
-                    <a href="#">E-Commerce Solutions</a>
+                    <a href="/services2">E-Commerce Solutions</a>
                   </li>
                   <li className="text-[#EEEEEE]">
-                    <a href="#">Digital Marketing</a>
+                    <a href="/services4">Digital Marketing</a>
                   </li>
                 </ul>
               </div>

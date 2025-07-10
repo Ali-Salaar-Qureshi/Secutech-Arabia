@@ -3,6 +3,7 @@ import LandingSection from "../homepage/LandingSection";
 import AboutUs from "../homepage/aboutUs";
 import OurLatestSoloutions from "../homepage/OurLatestSoloutions";
 import OurServices from "../homepage/OurServices";
+import GoofballModal from "../shared/GoofballModal";
 import OurProjects from "../homepage/OurProjects";
 import OurProducts from "../homepage/OurProducts";
 import NewsAndEvents from "../homepage/NewsAndEvents";
@@ -19,6 +20,7 @@ export default function Homepage() {
       <AboutUs />
       <OurLatestSoloutions />
       <OurServices />
+      <GoofballModal />
       <OurProjects />
       <OurProducts />
       <NewsAndEvents />

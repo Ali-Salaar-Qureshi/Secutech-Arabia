@@ -65,8 +65,8 @@ function ContactFormEmail() {
 
   return (
     <>
-      <div className="flex flex-col max-sm:w-full max-sm:px-5">
-        <h4 className="heading-4 text-[#092C4C] max-sm:text-center">
+      <div className="flex flex-col max-sm:w-auto max-sm:px-8 max-sm:items-center">
+        <h4 className="heading-4 text-[#092C4C] max-sm:text-center max-sm:w-[90%]">
           Ready to Discuss How We Can <br className="max-sm:hidden" /> Help Your
           Business Grow?
         </h4>
@@ -76,7 +76,7 @@ function ContactFormEmail() {
 
         <form
           onSubmit={handleSubmit}
-          className="mt-10 max-w-xl w-full max-sm:w-full"
+          className="mt-10 max-w-xl w-full max-sm:w-[90%]"
         >
           {["name", "email", "message"].map((field) => (
             <div className="mb-6" key={field}>

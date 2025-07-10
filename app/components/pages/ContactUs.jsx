@@ -5,7 +5,7 @@ import Footer from "../shared/Footer";
 
 function ContactUs(){
     return(
-        <main>
+        <main className="">
             <NavBar />
             <ContactLanding />
             <ContactSection />

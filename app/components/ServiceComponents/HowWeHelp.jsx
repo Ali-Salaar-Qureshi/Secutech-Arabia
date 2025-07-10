@@ -13,9 +13,9 @@ function HowWeHelp(props) {
         </p>
       </div>
 
-      <div className="flex flex-row gap-4 max-sm:flex-col items-center">
+      <div className="flex flex-row gap-4 max-sm:flex-col  items-center">
         {cards.map((card, index) => (
-          <div key={index} className="flex flex-col w-[292px] h-[201px]">
+          <div key={index} className="flex flex-col hover:scale-[102%] hover:cursor-pointer transition duration-300 w-[292px] h-[201px]">
             <div className="flex flex-col">
               <img
                 src={card.icon}
@@ -32,6 +32,7 @@ function HowWeHelp(props) {
           </div>
         ))}
       </div>
+      
     </section>
   );
 }

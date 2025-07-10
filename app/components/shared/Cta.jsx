@@ -1,4 +1,15 @@
+'use client';
+
+import { useState } from "react";
+import Modal from "./CtaModal";
+import ConsultationForm from "./ConsultationForm";
+
 function CallToAction() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <section>
       <div className="bg-gradient-to-r from-[#7cbbe8] to-[#e47680] max-sm:justify-center h-auto flex flex-row gap-70 py-15 max-sm:flex-col max-sm:gap-3 max-sm:items-center max-sm:text-center">
@@ -11,17 +22,25 @@ function CallToAction() {
             bring it to life with next-gen tech.
           </p>
         </div>
-        <div className="flex flex-row items-center gap-3  max-sm:mb-6 max-sm:flex-col max-sm:gap-6">
-          <button className="w-[193px] h-[52]  text-[#0E5B96] rounded-[100px] border-[#0E5B96] border-[1px] hover:bg-[#0E5B96] hover:text-white  transition duration-400">
-          <span className="medium-text-bold ">Book a consultation</span>
-        </button>
-        <a href="/contact">
-          <button className="w-[173px] h-[52]  text-white rounded-[100px] hover:text-white border-[#0E5B96] border-[1px] bg-[#0E5B96] hover:bg-[#eeeeee00]  transition duration-400">
-          <span className="medium-text-bold ">Contact Us</span>
-        </button>
-        </a>
+
+        <div className="flex flex-row items-center gap-3 max-sm:mb-6 max-sm:flex-col max-sm:gap-6">
+          <button
+            onClick={openModal}
+            className="w-[193px] h-[52px] text-[#0E5B96] rounded-[100px] border-[#0E5B96] border-[1px] hover:bg-[#0E5B96] hover:text-white transition duration-400"
+          >
+            <span className="medium-text-bold">Book a consultation</span>
+          </button>
+
+          <a href="/contact">
+            <button className="w-[173px] h-[52px] text-white rounded-[100px] hover:text-white border-[#0E5B96] border-[1px] bg-[#0E5B96] hover:bg-[#eeeeee00] transition duration-400">
+              <span className="medium-text-bold">Contact Us</span>
+            </button>
+          </a>
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <ConsultationForm />
+      </Modal>
     </section>
   );
 }

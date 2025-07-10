@@ -18,9 +18,11 @@ function AboutUs() {
           the Kingdom’s ambitious journey toward a smarter, more connected
           future.
         </p>
+        <a href="/about">
         <button className="w-[173px] h-[52]  text-[#0E5B96] rounded-[100px] border-[#0E5B96] border-[1px] hover:bg-[#0E5B96] hover:text-white  transition duration-400">
           <span className="medium-text-bold ">Learn More</span>
         </button>
+        </a>
       </div>
     </div>
   );
