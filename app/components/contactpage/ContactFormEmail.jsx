@@ -2,81 +2,63 @@
 
 import { useState } from "react";
 
-const initialValues = {
-  name: "",
-  email: "",
-  message: "",
-  category: "solutions",
-  service: "",
-};
-
-const serviceOptions = {
-  solutions: ["Solution 1", "Solution 2", "Solution 3", "Solution 4", "Solution 5"],
-  services: ["Service 1", "Service 2", "Service 3", "Service 4", "Service 5"],
-};
-
 export default function ContactFormEmail() {
-  const [values, setValues] = useState(initialValues);
-  const [errors, setErrors] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
-  const [response, setResponse] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    category: "solutions",
+    selection: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setValues((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: "" }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleCategoryChange = (e) => {
-    const value = e.target.value;
-    setValues((prev) => ({
+  const handleRadioChange = (value) => {
+    setFormData((prev) => ({
       ...prev,
       category: value,
-      service: "", // reset dropdown on category change
+      selection: "", // Reset dropdown when switching
     }));
-  };
-
-  const validate = () => {
-    const newErrors = {};
-    if (!values.name.trim()) newErrors.name = "Name is required";
-    if (!values.email.trim()) newErrors.email = "Email is required";
-    if (!values.message.trim()) newErrors.message = "Message is required";
-    if (!values.service) newErrors.service = "Please select a service";
-
-    return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newErrors = validate();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
+    setStatus("Sending...");
 
     try {
-      setIsLoading(true);
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify(formData),
       });
 
-      const data = await res.json();
-      setValues(initialValues);
-      setResponse(data?.message || "Message sent!");
+      if (res.ok) {
+        setStatus("Message sent!");
+        setFormData({
+          name: "",
+          email: "",
+          category: "solutions",
+          selection: "",
+          message: "",
+        });
+      } else {
+        setStatus("Failed to send.");
+      }
     } catch (err) {
-      setResponse("Something went wrong. Try again later.");
-    } finally {
-      setIsLoading(false);
+      console.error(err);
+      setStatus("Something went wrong.");
     }
   };
 
   return (
     <div className="flex flex-col max-sm:w-auto max-sm:px-8 max-sm:items-center">
       <h4 className="heading-4 text-[#092C4C] max-sm:text-center max-sm:w-[90%]">
-        Ready to Discuss How We Can <br className="max-sm:hidden" /> Help Your
-        Business Grow?
+        Ready to Discuss How We Can <br className="max-sm:hidden" /> Help Your Business Grow?
       </h4>
       <p className="large-text-regular text-[#5C5C5C] mt-4 max-sm:text-center">
         Reach out to us
@@ -84,136 +66,128 @@ export default function ContactFormEmail() {
 
       <form
         onSubmit={handleSubmit}
-        className="mt-5 max-w-xl w-full max-sm:w-[90%]"
+        className="mt-4 max-w-xl w-full max-sm:w-[90%]"
       >
-        {/* Name */}
-        <FormField
-          name="name"
-          label="Full Name"
-          value={values.name}
-          error={errors.name}
-          onChange={handleChange}
-        />
+        {/* Full Name */}
+        <div className="mb-6">
+          <label htmlFor="name" className="block  small-text-bold text-[#092C4C]">
+            Full Name *
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full max-w-[550px] rounded-md mt-2 placeholder:text-[14px] bg-white px-3.5 py-2 text-base text-gray-900 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#0F70B7] placeholder:text-gray-400"
+          />
+        </div>
 
         {/* Email */}
-        <FormField
-          name="email"
-          label="Email"
-          type="email"
-          value={values.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
+        <div className="mb-6">
+          <label htmlFor="email" className="block small-text-bold text-[#092C4C]">
+            Email *
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full max-w-[550px] rounded-md mt-2 placeholder:text-[14px] bg-white px-3.5 py-2 text-base text-gray-900 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#0F70B7] placeholder:text-gray-400"
+          />
+        </div>
 
-        {/* Radio Buttons */}
-        <div className="mb-[-5px]">
+        {/* Radios */}
+        <div className="mb-1">
           <div className="flex gap-6">
-            {["solutions", "services"].map((option) => (
-              <label key={option} className="flex items-center gap-2 small-text-bold cursor-pointer text-[#092C4C]">
-                <input
-                  type="radio"
-                  name="category"
-                  value={option}
-                  checked={values.category === option}
-                  onChange={handleCategoryChange}
-                  className="accent-[#0F70B7] h-[20px] w-[20px]"
-                />
-                {option[0].toUpperCase() + option.slice(1)}
-              </label>
-            ))}
+            <label className="flex items-center gap-2 small-text-bold text-[#092C4C]">
+              <input
+                type="radio"
+                name="category"
+                value="solutions"
+                checked={formData.category === "solutions"}
+                onChange={() => handleRadioChange("solutions")}
+                className="accent-[#0F70B7] w-[20px] h-[20px]"
+              />
+              Solutions
+            </label>
+            <label className="flex items-center gap-2 small-text-bold text-[#092C4C]">
+              <input
+                type="radio"
+                name="category"
+                value="services"
+                checked={formData.category === "services"}
+                onChange={() => handleRadioChange("services")}
+                className="accent-[#0F70B7] w-[20px] h-[20px]"
+              />
+              Services
+            </label>
           </div>
         </div>
 
-        {/* Dropdown */}
-        <div className="mb-6">
-          <label className="block small-text-bold text-[#092C4C] mb-2">
-            Select {values.category}
-          </label>
+        {/* Select dropdown */}
+        <div className="mb-4">
           <select
-            name="service"
-            value={values.service}
+            id="selection"
+            name="selection"
+            value={formData.selection}
             onChange={handleChange}
-            className={`w-full max-w-[550px] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 placeholder:text-gray-400 outline-1 ${
-              errors.service ? "outline-red-500" : "outline-gray-300"
-            } focus:outline-2 focus:outline-[#0F70B7]`}
+            required
+            className="w-full max-w-[550px] outline-1 outline-gray-300 focus:outline-2 focus:outline-[#0F70B7] rounded-md mt-2 bg-white px-3.5 py-2 text-base text-gray-900"
           >
-            <option value="">Select {values.category}</option>
-            {serviceOptions[values.category].map((option, i) => (
-              <option key={i} value={option}>
-                {option}
-              </option>
-            ))}
+            <option value="">Select {formData.category}</option>
+            {formData.category === "solutions" ? (
+              <>
+                <option value="Solution 1">Solution 1</option>
+                <option value="Solution 2">Solution 2</option>
+                <option value="Solution 3">Solution 3</option>
+                <option value="Solution 4">Solution 4</option>
+                <option value="Solution 5">Solution 5</option>
+              </>
+            ) : (
+              <>
+                <option value="Service 1">Service 1</option>
+                <option value="Service 2">Service 2</option>
+                <option value="Service 3">Service 3</option>
+                <option value="Service 4">Service 4</option>
+                <option value="Service 5">Service 5</option>
+              </>
+            )}
           </select>
-          {errors.service && (
-            <p className="text-red-500 small-text-bold">{errors.service}</p>
-          )}
         </div>
 
         {/* Message */}
-        <FormField
-          name="message"
-          label="Message"
-          type="textarea"
-          value={values.message}
-          error={errors.message}
-          onChange={handleChange}
-        />
+        <div className="mb-6">
+          <label htmlFor="message" className="block small-text-bold text-[#092C4C]">
+            Message *
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message..."
+            value={formData.message}
+            onChange={handleChange}
+            rows="4"
+            required
+            className="w-full max-w-[550px] rounded-md mt-2 placeholder:text-[14px] bg-white px-3.5 py-2 text-base text-gray-900 outline-1 outline-gray-300 focus:outline-2 focus:outline-[#0F70B7] placeholder:text-gray-400"
+          />
+        </div>
 
         {/* Submit Button */}
         <button
           type="submit"
-          disabled={isLoading}
           className="w-full max-w-[550px] rounded-md bg-[#0F70B7] px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-[#0b7fd2] transition duration-300"
         >
-          {isLoading ? "Sending..." : "Send Message"}
+          Send Message
         </button>
 
-        {/* Response Message */}
-        {response && <p className="mt-4 text-sm text-gray-600">{response}</p>}
+        {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
       </form>
-    </div>
-  );
-}
-
-function FormField({
-  name,
-  label,
-  type = "text",
-  value,
-  error,
-  onChange,
-}) {
-  const inputClass = `w-full max-w-[550px] rounded-md mt-2 placeholder:text-[14px] bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 ${
-    error ? "outline-red-500" : "outline-gray-300"
-  } placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#0F70B7]`;
-
-  return (
-    <div className="mb-6">
-      <label htmlFor={name} className="block small-text-bold text-[#092C4C]">
-        {label} *
-      </label>
-      {type === "textarea" ? (
-        <textarea
-          id={name}
-          name={name}
-          rows="4"
-          placeholder={`Write your ${label.toLowerCase()}...`}
-          value={value}
-          onChange={onChange}
-          className={inputClass}
-        />
-      ) : (
-        <input
-          id={name}
-          name={name}
-          type={type}
-          placeholder={`Enter ${label.toLowerCase()}`}
-          value={value}
-          onChange={onChange}
-          className={inputClass}
-        />
-      )}
-      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
     </div>
   );
 }

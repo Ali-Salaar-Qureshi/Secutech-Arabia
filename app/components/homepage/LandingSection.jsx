@@ -42,7 +42,7 @@ function LandingSection() {
                md:px-8 md:py-4 md:text-lg
                max-sm:px-4 max-sm:py-2 max-sm:text-xs"
           >
-            Explore Solutions
+            Browse Our Soloutions
           </button>
 
           {/* Request a Demo */}
@@ -54,7 +54,7 @@ function LandingSection() {
                md:px-8 md:py-4 md:text-lg
                max-sm:px-4 max-sm:py-2 max-sm:text-xs"
           >
-            Request A Demo
+            Book Consultation
           </button>
         </div>
 

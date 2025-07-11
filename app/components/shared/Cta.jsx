@@ -26,9 +26,9 @@ function CallToAction() {
         <div className="flex flex-row items-center pr-15 max-sm:pr-0 gap-3 max-sm:mb-6 max-sm:flex-col max-sm:gap-6">
           <button
             onClick={openModal}
-            className="w-[193px] h-[52px] text-[#0E5B96] rounded-[100px] border-[#0E5B96] border-[1px] hover:bg-[#0E5B96] hover:text-white transition duration-400"
+            className="w-[213px] h-[52px] text-[#0E5B96] rounded-[100px] border-[#0E5B96] border-[1px] hover:bg-[#0E5B96] hover:text-white transition duration-400"
           >
-            <span className="medium-text-bold">Book a consultation</span>
+            <span className="medium-text-bold">Free consultation call</span>
           </button>
 
           <a href="/contact">

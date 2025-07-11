@@ -49,7 +49,7 @@ function OurLatestSoloutions() {
           />
         </div>
         <button className="py-[16px] px-[32px] gap-10 mt-8 rounded-[100px] bg-[#0E5B96] text-white medium-text-bold hover:bg-[#0970bf] transition duration-300 max-sm:w-60 max-sm:my-3">
-          View All Soloutions
+          Explore Full Solution Suite
         </button>
       </div>
     </section>

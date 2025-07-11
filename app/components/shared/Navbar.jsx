@@ -122,7 +122,7 @@ export default function NavBar() {
             className="hidden lg:flex items-center justify-center rounded-full text-white font-medium gap-[10px]"
           >
             <span className="text-center text-base leading-[26px] pt-[12px] pb-[15px] px-[40px]">
-              Contact Us
+              Start a Project
             </span>
           </motion.button>
         </a>

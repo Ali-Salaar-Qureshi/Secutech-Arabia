@@ -83,22 +83,22 @@ export default function GoofballModal() {
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black text-white text-center px-4">
           {phase === 'countdown' ? (
             <div className="bg-white p-6 rounded-2xl shadow-2xl w-[90%] max-w-md text-center animate-fadeIn text-black">
-              <h2 className="text-2xl font-extrabold text-[#DC2626] mb-3">SELF DESTRUCT IMMINENT</h2>
-              <p className="text-lg">Self destruct in:</p>
+              <h2 className="text-2xl font-extrabold text-[#DC2626] mb-3">Decrypting Your Security...</h2>
+              <p className="text-lg">Secutech Arabia’s innovation in:</p>
               <p className="text-5xl font-bold text-red-600 mt-2">{countdown}</p>
             </div>
           ) : (
-            <div>
-              <h1 className="text-[100px] font-extrabold text-[#FF4136] leading-none">404</h1>
-              <p className="text-2xl font-semibold mb-4">Site not found</p>
+            <div className='flex flex-col items-center gap-3'>
+              <img src="/images/Secutech logo.png" className='w-[30%]' alt="" />
+              <p className="text-2xl font-semibold mb-4">Welcome to Secutech’s Hidden Protocol</p>
               <p className="text-[#ccc] max-w-md mx-auto">
-                You tried something dumb and broke the ENTIRE site. We hope you're proud of yourself.
+                Our mission: to make security feel invisible but invincible.
               </p>
               <button
                 onClick={handleClose}
-                className="mt-8 px-6 py-3 bg-[#FF4136] hover:bg-red-700 rounded-full text-white font-bold"
+                className="mt-8 px-6 py-3 bg-red-700 hover:bg-[#FF4136] transition duration-300 rounded-full text-white font-bold"
               >
-                Go Back
+                Exit Secure Mode
               </button>
             </div>
           )}
