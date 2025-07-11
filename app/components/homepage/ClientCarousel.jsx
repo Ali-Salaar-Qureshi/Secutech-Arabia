@@ -38,6 +38,7 @@ export default function ClientCarousel() {
           speed={70}
           gradient={true}
           pauseOnHover={false}
+          pauseOnClick={true}
           className="gap-x-1"
         >
           {topLogos.map((src, index) => (
@@ -61,6 +62,7 @@ export default function ClientCarousel() {
   speed={70}
   gradient={true}
   pauseOnHover={false}
+  pauseOnClick={true}
   className="!flex !items-center"
 >
   {[...bottomLogos, ...bottomLogos].map((src, index) => (

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const servicesList = ['Branding', 'Product Development', 'UI/UX'];
+const servicesList = ['Branding', 'Product Development', 'UI/UX', 'Digital Marketing'];
 
 export default function ConsultationForm() {
   const [formData, setFormData] = useState({
@@ -71,7 +71,7 @@ export default function ConsultationForm() {
   );
 
   return (
-    <div className="w-full max-w-[550px] mx-auto bg-[#EEEEEE] p-4 sm:p-6 rounded-[12px]">
+    <div className="w-full max-w-[550px] h-[600px] mx-auto bg-[#EEEEEE] p-4 sm:p-6 rounded-[12px]">
       <h2 className="mb-4 text-[#092C4C] large-text-bold">
         Request / Get a Quote:
       </h2>
@@ -175,9 +175,9 @@ export default function ConsultationForm() {
                 type="button"
                 key={i}
                 onClick={() => handleServiceToggle(service)}
-                className={`px-3 py-1 rounded-full text-xs sm:text-sm border transition ${
+                className={`px-3 py-0.5 rounded-full text-xs font-normal sm:text-sm border transition ${
                   formData.services.includes(service)
-                    ? 'bg-[#0E5B96] text-white border-blue-600'
+                    ? 'bg-[#0E5B96] text-white border-[#0E5B96]'
                     : 'bg-[#F0F0F0] text-[#1A1A1A] border-gray-300'
                 }`}
               >
