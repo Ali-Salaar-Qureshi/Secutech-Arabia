@@ -193,7 +193,8 @@ function Footer() {
           {/* Copyright */}
           <div className="flex flex-row justify-between items-center py-5 px-[100px] max-sm:flex-col max-sm:text-center max-sm:gap-3 max-sm:px-6">
             <h3 className="small-text-regular text-[#EEEEEE]">
-              © 2025 | Secutech All rights reserved.
+              © 2025 | Secutech All rights reserved.<br/><br />
+              The site responds to a special key sequence.<br /> Try S + T + A on the homepage.
             </h3>
             <h3 className="small-text-regular text-[#EEEEEE]">
               Designed and Developed by DevTech Fusion.
