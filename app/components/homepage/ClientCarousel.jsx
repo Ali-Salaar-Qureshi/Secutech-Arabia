@@ -24,7 +24,6 @@ const bottomLogos = [
   "/images/client-slider/client16.png",
   "/images/client-slider/client17.png",
   "/images/client-slider/client18.png",
-  "/images/client-slider/client19.png",
 ];
 
 export default function ClientCarousel() {

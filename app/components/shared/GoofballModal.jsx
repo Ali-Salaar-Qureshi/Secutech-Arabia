@@ -34,7 +34,6 @@ export default function GoofballModal() {
         setPhase('countdown');
         setCountdown(3);
         siren?.play();
-        countdownSound?.play();
       }
     };
 
@@ -53,8 +52,6 @@ export default function GoofballModal() {
       setPhase('404');
       siren?.pause();
       siren.currentTime = 0;
-      countdownSound?.pause();
-      countdownSound.currentTime = 0;
     }
   }, [isOpen, phase, countdown]);
 

@@ -1,7 +1,7 @@
 function AboutUs() {
   return (
     <div className="flex flex-row gap-30 max-xl:flex-col mt-25 justify-between max-sm:text-center sm:mx-[100px] max-sm:px-[4%]">
-      <img src="/images/About-Us-Image.png" alt="about us background" className="w-[100%] max-sm:px-[2%] max-sm:w-[100%]" />
+      <img src="/images/About-Us-Image.png" alt="about us background" className="w-[539px] max-sm:px-[2%] max-sm:w-[100%]" />
       <div className="flex flex-col justify-center max-sm:items-center">
         <h1 className="heading-3 text-[#092C4C] mb-7 max-sm:px-5">About Us</h1>
         <p className="max-w-[130p] text-[#5C5C5C]  normal-text-bold max-sm:px-[2%] max-sm:w-[85%]">

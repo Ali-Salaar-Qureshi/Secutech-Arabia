@@ -128,7 +128,7 @@ function ContactFormEmail() {
           </button>
 
           {response && (
-            <p className="mt-4 text-sm text-green-600">{response}</p>
+            <p className="mt-4 text-sm text-gray-600">{response}</p>
           )}
         </form>
       </div>

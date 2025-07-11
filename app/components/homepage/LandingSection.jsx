@@ -47,7 +47,7 @@ function LandingSection() {
 
           {/* Request a Demo */}
           <button
-            className="rounded-full border-2 border-white text-white font-semibold hover:border-[#BE1522]
+            className="rounded-full border-[1.8px] border-white text-white font-semibold hover:border-[#BE1522]
                hover:bg-[#BE1522] transition duration-300 ease-in-out
                px-6 py-3 text-sm
                sm:px-7 sm:py-3.5 sm:text-base

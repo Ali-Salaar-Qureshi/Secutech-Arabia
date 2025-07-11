@@ -13,7 +13,7 @@ export async function POST(req) {
 
   const mailOptions = {
     from: `"${name}" <${email}>`,
-    to: process.env.EMAIL_TO_CONTACT, // ✅ updated
+    to: process.env.EMAIL_TO_CONTACT, 
     subject: "New Contact Form Submission",
     text: message,
     html: `
