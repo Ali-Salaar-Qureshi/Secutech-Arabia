@@ -70,15 +70,22 @@ function Footer() {
                 Awards & Certifications
               </h1>
               <div className="flex flex-row gap-2 max-sm:justify-center">
-                <div className="w-[120px] h-[120px] bg-white rounded-[8px] mb-2"></div>
-                <div className="flex flex-col gap-2">
-                  <div className="w-[120px] h-[56px] bg-white rounded-[8px]"></div>
-                  <div className="w-[120px] h-[56px] bg-white rounded-[8px]"></div>
+                <div className="flex flex-row mb-2 gap-2">
+                  <div className="w-[120px] h-[70px] bg-white rounded-[8px]">
+                    <img src="/images/award 1.jpg" className="w-[120px] h-[70px] rounded-[8px]" alt="" />
+                  </div>
+                  <div className="w-[120px] h-[70px] bg-white rounded-[8px]">
+                    <img src="/images/award 2.jpg" className="w-[120px] h-[70px] rounded-[8px]" alt="" />
+                  </div>
                 </div>
               </div>
               <div className="flex flex-row gap-2 max-sm:justify-center">
-                <div className="w-[120px] h-[56px] bg-white rounded-[8px]"></div>
-                <div className="w-[120px] h-[56px] bg-white rounded-[8px]"></div>
+                <div className="w-[120px] h-[70px] bg-white rounded-[8px]">
+                  <img src="/images/award 3.jpg" className="w-[120px] h-[70px] rounded-[8px]" alt="" />
+                </div>
+                <div className="w-[120px] h-[70px] bg-white rounded-[8px]">
+                  <img src="/images/award 4.jpg" className="w-[120px] h-[70px] rounded-[8px]" alt="" />
+                </div>
               </div>
             </div>
           </div>

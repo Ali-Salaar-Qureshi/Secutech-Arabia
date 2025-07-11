@@ -10,8 +10,12 @@ const slides = [
   "/images/Frame 25.png",
   "/images/Frame 26.png",
   "/images/Frame 27.png",
-  "/images/Frame 28.png",
 ];
+const titles = [
+  "CCTV soloutions",
+  "Hotel locks",
+  "Time/attendance"
+]
 
 export default function OurProducts() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -27,9 +31,6 @@ export default function OurProducts() {
             designed for advanced security and business efficiency.
           </p>
         </div>
-        <button className="py-[10px] h-14 px-[32px] rounded-[100px] bg-[#0E5B96] text-white medium-text-bold hover:bg-[#0970bf] transition duration-300 max-sm:w-full">
-          Browse Products
-        </button>
       </div>
 
       {/* Slider */}
@@ -52,8 +53,8 @@ export default function OurProducts() {
               spaceBetween: 16,
             },
             1024: {
-              slidesPerView: 4,
-              spaceBetween: 24,
+              slidesPerView: 3,
+              spaceBetween: 74,
             },
           }}
         >
@@ -63,8 +64,9 @@ export default function OurProducts() {
                 <img
                   src={img}
                   alt={`Slide ${i}`}
-                  className="rounded-xl w-full h-auto object-cover max-h-[400px]"
+                  className="relative rounded-xl w-full max-sm:h-auto h-[260px] object-cover"
                 />
+                <h1 className="absolute bottom-[-14px] left-[8px] medium-text-bold text-[#092C4C]">{titles[i]}</h1>
               </div>
             </SwiperSlide>
           ))}

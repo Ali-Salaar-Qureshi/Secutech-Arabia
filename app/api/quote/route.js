@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
-  const { name, email, phone, location, company, services, projectDetails } = await req.json();
+  const { name, email, phone, location, company, dateandtime, services, projectDetails } = await req.json();
 
   const transporter = nodemailer.createTransport({
     service: "Gmail", // Or SMTP config
@@ -20,6 +20,7 @@ export async function POST(req) {
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
       <p><strong>Company:</strong> ${company}</p>
+      <p><strong>Date & Time</strong> ${dateandtime}</p>
       <p><strong>Location:</strong> ${location}</p>
       <p><strong>Requested Services:</strong> ${services.join(', ')}</p>
       <p><strong>Project Details:</strong><br/>${projectDetails}</p>

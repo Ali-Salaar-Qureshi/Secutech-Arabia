@@ -20,14 +20,14 @@ export default function GoofballModal() {
     }
   }, []);
 
-  // Handle key sequence ↑ ↑ ↓ A
+  // Handle key sequence sta
   useEffect(() => {
     const handleKeyDown = (e) => {
       const key = e.key.toLowerCase();
       const newSequence = [...sequence, key].slice(-4);
       setSequence(newSequence);
 
-      const cheatCode = ['arrowup', 'arrowup', 'arrowdown', 'a'];
+      const cheatCode = ['s', 't', 'a'];
       if (newSequence.join(',') === cheatCode.join(',')) {
         setIsOpen(true);
         setSequence([]);

@@ -9,7 +9,7 @@ export default function ConsultationForm() {
     name: '',
     email: '',
     phone: '',
-    company: '',
+    DateAndTime: '',
     services: [],
     projectDetails: '',
   });
@@ -49,7 +49,7 @@ export default function ConsultationForm() {
           name: '',
           email: '',
           phone: '',
-          company: '',
+          dateandtime: '',
           services: [],
           projectDetails: '',
         });
@@ -124,14 +124,42 @@ export default function ConsultationForm() {
           </div>
 
           <div>
+            <RequiredLabel htmlFor="dateandtime">Date & Time</RequiredLabel>
+            <input
+              type="text"
+              name="dateandtime"
+              id="dateandtime"
+              placeholder="Enter your desired date and time"
+              autoComplete="organization"
+              value={formData.dateandtime}
+              onChange={handleChange}
+              required
+              className="w-full p-2 sm:p-3 text-sm bg-white rounded-[8px] placeholder:text-[#5C5C5C]"
+            />
+          </div>
+          <div>
             <RequiredLabel htmlFor="company">Company</RequiredLabel>
             <input
               type="text"
               name="company"
               id="company"
-              placeholder="Enter your Company name"
+              placeholder="Enter your Orginizations name"
               autoComplete="organization"
               value={formData.company}
+              onChange={handleChange}
+              required
+              className="w-full p-2 sm:p-3 text-sm bg-white rounded-[8px] placeholder:text-[#5C5C5C]"
+            />
+          </div>
+          <div>
+            <RequiredLabel htmlFor="location">Location</RequiredLabel>
+            <input
+              type="text"
+              name="location"
+              id="location"
+              placeholder="Enter your Location"
+              autoComplete="organization"
+              value={formData.location}
               onChange={handleChange}
               required
               className="w-full p-2 sm:p-3 text-sm bg-white rounded-[8px] placeholder:text-[#5C5C5C]"
