@@ -49,10 +49,11 @@ export default function OurProjects() {
             className="flex flex-wrap gap-3 items-center max-sm:hidden"
             id="custom-buttons"
           >
+             <a href="/casestudies">
             <button className="group flex py-[7px] pl-[15px] pr-[15px] rounded-[100px] border-[2px] border-[#0F70B7] hover:border-[#e41e2f11] hover:bg-[#0f71b7da] transition duration-300 hover:text-white items-center">
               <div className="flex flex-row text-center gap-2 items-center">
                 <span className="text-[#0F70B7] text-medium-regular group-hover:text-white transition duration-300 font-medium">
-                  View All Projects
+                 View All Projects
                 </span>
                 <div className="bg-[#0F70B7] rounded-full p-2">
                   <img
@@ -63,7 +64,7 @@ export default function OurProjects() {
                 </div>
               </div>
             </button>
-
+            </a>
             <button className="prev p-2.5 border border-[#092C4C80] rounded-full hover:bg-[#5c5c5c26] transition">
               <img src="/images/icons/chevron-left.png" alt="Prev icon" />
             </button>
