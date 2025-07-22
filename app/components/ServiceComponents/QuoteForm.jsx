@@ -320,7 +320,7 @@ export default function QuoteForm() {
           <button
             type="submit"
             disabled={status === "Sending..."}
-            className="w-full max-w-[550px] flex items-center justify-center gap-2 rounded-md bg-[#0F70B7] px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-[#0b7fd2] transition duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full max-w-[550px] flex items-center justify-center gap-2 rounded-full bg-[#0E5B96] px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-[#0165b1] transition duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {status === "Sending..." && (
               <span className="inline-block h-4 w-4 border-[2px] border-white border-t-transparent rounded-full animate-spin"></span>

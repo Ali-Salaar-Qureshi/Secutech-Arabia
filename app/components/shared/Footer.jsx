@@ -71,20 +71,20 @@ function Footer() {
               </h1>
               <div className="flex flex-row gap-2 max-sm:justify-center">
                 <div className="flex flex-row mb-2 gap-2">
-                  <div className="w-[120px] h-[70px] bg-white rounded-[8px]">
-                    <img src="/images/award 1.jpg" className="w-[120px] h-[70px] rounded-[8px]" alt="" />
+                  <div className="w-[210px] h-[120px] bg-white rounded-[8px]">
+                    <img src="/images/award 1.jpg" className="w-full h-full rounded-[8px]" alt="" />
                   </div>
-                  <div className="w-[120px] h-[70px] bg-white rounded-[8px]">
-                    <img src="/images/award 2.jpg" className="w-[120px] h-[70px] rounded-[8px]" alt="" />
+                  <div className="w-[180px] h-[120px] bg-white rounded-[8px]">
+                    <img src="/images/award 2.png" className="w-full h-full rounded-[8px]" alt="" />
                   </div>
                 </div>
               </div>
               <div className="flex flex-row gap-2 max-sm:justify-center">
-                <div className="w-[120px] h-[70px] bg-white rounded-[8px]">
-                  <img src="/images/award 3.jpg" className="w-[120px] h-[70px] rounded-[8px]" alt="" />
+                <div className="w-[120px] h-[170px] bg-white rounded-[8px]">
+                  <img src="/images/award 3.png" className="w-full h-full rounded-[8px]" alt="" />
                 </div>
-                <div className="w-[120px] h-[70px] bg-white rounded-[8px]">
-                  <img src="/images/award 4.jpg" className="w-[120px] h-[70px] rounded-[8px]" alt="" />
+                <div className="w-[272px] h-[170px] bg-white rounded-[8px]">
+                  <img src="/images/award 4.jpg" className="w-full h-full rounded-[8px]" alt="" />
                 </div>
               </div>
             </div>
