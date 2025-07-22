@@ -33,9 +33,8 @@ function OurLatestSoloutions() {
             img="/images/Security camera.png"
             alt="Security camera image"
             heading="Video Surveillance Systems"
-            text="Smart surveillance solutions that deter crime, 
-            enhance monitoring, and support investigations through 
-            AI-powered insights. Compliant with privacy laws, 
+            text="Surveillance solutions that deter crime, 
+            enhance monitoring, and support investigations. Compliant with privacy laws, 
             these systems boost security while enabling efficient, 
             remote oversight."
           />
@@ -48,9 +47,11 @@ function OurLatestSoloutions() {
                 they integrate seamlessly into broader security frameworks."
           />
         </div>
+        <a href="/oursoloutions">
         <button className="py-[16px] px-[32px] gap-10 mt-8 rounded-[100px] bg-[#0E5B96] text-white medium-text-bold hover:bg-[#0970bf] transition duration-300 max-sm:w-60 max-sm:my-3">
           Explore Full Solution Suite
         </button>
+        </a>
       </div>
     </section>
   );
