@@ -25,7 +25,8 @@ export default function NavBar() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Partners", href: "/partners" },
-    { name: "Soloutions", href: "/" },
+    { name: "Soloutions", href: "/oursoloutions"},
+    {name: "Projects", href: "/casestudies"},
   ];
 
   return (
@@ -39,7 +40,7 @@ export default function NavBar() {
         />
 
         {/* Desktop Nav */}
-        <ul className="hidden lg:flex flex-row gap-[40px] text-[#092c4c] medium-text-regular items-center">
+        <ul className="hidden lg:flex flex-row gap-[35px] text-[#092c4c] medium-text-regular items-center">
           {navLinks.map((link, index) => (
             <li key={index}>
               <a href={link.href}>{link.name}</a>

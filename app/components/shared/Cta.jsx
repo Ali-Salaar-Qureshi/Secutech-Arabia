@@ -12,8 +12,8 @@ function CallToAction() {
 
   return (
     <section>
-      <div className="bg-gradient-to-r from-[#7cbbe8] to-[#e47680] justify-between h-auto flex flex-row py-15 max-sm:py-0 max-sm:flex-col max-sm:items-center max-sm:text-center">
-        <div className="flex flex-col justify-center max-sm:mx-5 max-sm:items-center pl-15 gap-3">
+      <div className="bg-gradient-to-r from-[#7cbbe8] to-[#e47680] justify-between h-auto flex flex-row py-20 max-sm:py-0 max-sm:flex-col max-sm:items-center max-sm:text-center">
+        <div className="flex flex-col justify-center max-sm:mx-5 max-sm:items-center max-sm:p-0 pl-15 gap-3">
           <h3 className="heading-4 text-[#092C4C] ">
             Let’s Secure the Future — Together
           </h3>

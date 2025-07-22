@@ -3,11 +3,12 @@ function StrategicTechnologyAlliance() {
     <section className="bg-[url('/images/partnerBG.png')] bg-cover bg-center max-sm:pb-10 h-[1004px] max-sm:h-auto mt-20 w-full flex items-end pl-[100px] pb-[60px] max-sm:items-center max-sm:justify-center max-sm:p-0">
       <div className="flex flex-col items-center w-full h-full max-sm:px-5">
         <img src="/images/STAandDTF.png" className="mt-25" alt="" />
-        <h1 className="heading-3 text-white text-center mt-10">
+        <h3 className="py-[10px] px-[30px] rounded-full bg-[#A3D348] medium-text-bold text-[#092C4C] mt-5">Partners</h3>
+        <h1 className="heading-3 text-white text-center">
           Strategic
           <br /> Technology Alliance
         </h1>
-        <div className="flex flex-col w-[820px] max-sm:w-auto text-center gap-6 mt-25 max-sm:mt-10">
+        <div className="flex flex-col w-[820px] max-sm:w-auto text-center gap-6 mt-15 max-sm:mt-10">
           <p className="medium-text-regular text-white">
             We are proud to announce our official partnership with DevTech
             Fusion — a move that strengthens our mission to deliver end-to-end,

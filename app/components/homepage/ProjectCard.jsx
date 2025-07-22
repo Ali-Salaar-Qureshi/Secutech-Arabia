@@ -9,7 +9,7 @@ export default function ProjectCard({ image }) {
         alt="Project"
         className="rounded-xl w-full h-auto object-cover"
       />
-      <a href="/CaseStudies">
+      <a href="/casestudies">
       <button className="absolute bottom-8 right-10 p-4 bg-white text-white text-sm rounded-full hover:bg-[#e0e0e0] transition max-sm:bottom-11 max-sm:p-2.5 max-sm:right-4">
         <img
           src="/images/icons/black-arrow.png"
