@@ -11,7 +11,7 @@ function OurLatestSolutions() {
       <main>
         <SolutionLanding />
         <div className="flex flex-col gap-8 my-10 w-full items-center">
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-row max-sm:flex-col gap-8">
             <Card
               img="/images/Solutions/sp1.png"
               alt="Time attendance image"
@@ -40,7 +40,7 @@ function OurLatestSolutions() {
                unauthorised entries with round-the-clock security coverage."
             />
           </div>
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-row max-sm:flex-col gap-8">
             <Card
               img="/images/Solutions/sp4.png"
               alt="Artificial intelligence image"
@@ -67,7 +67,7 @@ function OurLatestSolutions() {
               expert servicing, rapid response, and long-term reliability."
             />
           </div>
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-row max-sm:flex-col gap-8">
             <Card
               img="/images/Solutions/sp7.png"
               alt="Vehicle tracking image"
@@ -94,7 +94,7 @@ function OurLatestSolutions() {
               — with Arabic and English support."
             />
           </div>
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-row max-sm:flex-col gap-8">
             <Card
               img="/images/Solutions/sp10.png"
               alt="WiFi access point image"
@@ -121,7 +121,7 @@ function OurLatestSolutions() {
               Enhance inventory control with discreet, reliable protection."
             />
           </div>
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-row max-sm:flex-col gap-8">
             <Card
               img="/images/Solutions/sp13.png"
               alt="Warehouse management image"
