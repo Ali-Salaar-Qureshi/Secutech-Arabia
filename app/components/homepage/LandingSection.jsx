@@ -34,6 +34,7 @@ function LandingSection() {
              max-sm:bottom-[190px] max-sm:left-3 max-sm:gap-2"
         >
           {/* Explore Solutions */}
+          <a href="/oursoloutions">
           <button
             className="rounded-full bg-[#BE1522] text-white font-semibold
                hover:bg-[#de3240] transition duration-300 ease-in-out
@@ -44,6 +45,7 @@ function LandingSection() {
           >
             Browse Our Soloutions
           </button>
+          </a>
 
           {/* Request a Demo */}
           <button

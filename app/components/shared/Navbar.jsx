@@ -15,10 +15,10 @@ export default function NavBar() {
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const services = [
-    { name: "Branding & UI/UX Design", href: "/services1" },
-    { name: "Ecommerce Solutions", href: "/services2" },
-    { name: "Product Development", href: "/services3" },
-    { name: "Digital Marketing", href: "/services4" },
+    { name: "Branding & UI/UX Design", href: "/BrandingAndUIUX" },
+    { name: "Ecommerce Solutions", href: "/EcommerceSolutions" },
+    { name: "Product Development", href: "/ProductDevelopment" },
+    { name: "Digital Marketing", href: "/DigitalMarketing" },
   ];
 
   const navLinks = [

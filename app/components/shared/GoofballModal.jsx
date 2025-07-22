@@ -23,8 +23,8 @@ export default function GoofballModal() {
   // Handle key sequence sta
   useEffect(() => {
     const handleKeyDown = (e) => {
-      const key = e.key.toLowerCase();
-      const newSequence = [...sequence, key].slice(-4);
+      const key = typeof e.key === 'string' ? e.key.toLowerCase() : '';
+      const newSequence = [...sequence, key].slice(-3); 
       setSequence(newSequence);
 
       const cheatCode = ['s', 't', 'a'];

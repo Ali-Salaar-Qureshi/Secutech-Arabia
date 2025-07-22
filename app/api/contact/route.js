@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
-  const { name, email, message, category, service } = await req.json();
+  const { name, email, message, category, selection } = await req.json(); // ⬅️ change from service → selection
 
   const transporter = nodemailer.createTransport({
     service: "Gmail",
@@ -19,14 +19,14 @@ export async function POST(req) {
 Name: ${name}
 Email: ${email}
 Category: ${category}
-Selected Service: ${service}
+Selected ${category === "solutions" ? "Solution" : "Service"}: ${selection}
 Message: ${message}
     `,
     html: `
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Category:</strong> ${category}</p>
-      <p><strong>Selected ${category === "solutions" ? "Solution" : "Service"}:</strong> ${service}</p>
+      <p><strong>Selected ${category === "solutions" ? "Solution" : "Service"}:</strong> ${selection}</p>
       <p><strong>Message:</strong><br/>${message}</p>
     `,
   };

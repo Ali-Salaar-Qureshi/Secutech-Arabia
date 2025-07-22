@@ -7,18 +7,10 @@ function OurLatestSoloutions() {
         <h1 className="heading-3 text-[#092C4C] max-sm:w-60% text-center mx-[100px]">
           OUR LATEST SOLOUTIONS
         </h1>
-        <p className="w-180 text-center normal-text-regular text-[#5C5C5C] max-sm:w-80">
+        <p className="w-[552px] text-center normal-text-regular text-[#5C5C5C] max-sm:w-80">
           Explore how our technologies address today’s most pressing security
           challenges with innovation, compliance, and efficiency.
         </p>
-        <div className="flex flex-row gap-4 max-sm:flex-col">
-          <button className="py-[11px] px-[20px] rounded-[100px] bg-[#EEEEEE] normal-text-bold text-[#092C4C] max-sm:w-52 hover:bg-[#e5e5e5] transition duration-300">
-            Security soloutions
-          </button>
-          <button className="py-[11px] px-[20px] rounded-[100px]  normal-text-bold text-[#5C5C5C] max-sm:w-52">
-            Custom soloutions
-          </button>
-        </div>
         <div className="flex flex-row gap-10  max-sm:flex-col">
           <Card
             img="/images/Access control.png"

@@ -12,7 +12,7 @@ function Card(props) {
       <button className="group mb-4 flex py-[13px] pl-[24px] pr-[20px] rounded-[100px] border-[2px] border-[#e41e2ffd] hover:border-[#e41e2f11] hover:bg-[#e41e2fc2] transition duration-300 hover:text-white items-start">
         <div className="flex flex-row text-center">
           <span className="text-[#E41E2D] text-medium-regular group-hover:text-white transition duration-300 font-medium">
-            Explore Use Case
+            Request Service
           </span>
           <img
             src="/images/icons/arrow-icon.png"

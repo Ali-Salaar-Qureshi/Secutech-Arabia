@@ -1,5 +1,5 @@
 import NavBar from "../shared/Navbar";
-import BrandingAndUIUXLanding from "../servicespage1/BrandingAndUIUXLanding";
+import BrandingAndUIUXLanding from "../Branding & UiUx/BrandingAndUIUXLanding";
 import ServiceDetail from "../ServiceComponents/ServiceDetail";
 import OurProcesses from "../ServiceComponents/OurProcesses";
 import HowWeHelp from "../ServiceComponents/HowWeHelp";

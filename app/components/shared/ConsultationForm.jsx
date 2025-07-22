@@ -1,26 +1,28 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-const servicesList = ['Branding', 'Product Development', 'UI/UX', 'Digital Marketing'];
+const servicesList = ["Branding", "Product Development", "UI/UX"];
 
-export default function ConsultationForm() {
+export default function QuoteForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    DateAndTime: '',
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+    company: "",
+    projectDetails: "",
     services: [],
-    projectDetails: '',
+    category: "solutions",
+    selection: "",
   });
 
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleServiceToggle = (service) => {
@@ -32,186 +34,286 @@ export default function ConsultationForm() {
     }));
   };
 
+  const handleRadioChange = (value) => {
+    setFormData((prev) => ({
+      ...prev,
+      category: value,
+      selection: "", // reset selection on category change
+    }));
+  };
+
+  // Build request body dynamically: only include non-empty fields
+  const buildRequestBody = (data) => {
+    const body = {};
+
+    // Always include required fields
+    ["name", "email", "phone", "projectDetails"].forEach((key) => {
+      if (data[key]?.trim()) body[key] = data[key].trim();
+    });
+
+    if (data.location?.trim()) body.location = data.location.trim();
+    if (data.company?.trim()) body.company = data.company.trim();
+    if (data.category) body.category = data.category;
+    if (data.selection) body.selection = data.selection;
+
+    if (Array.isArray(data.services) && data.services.length > 0) {
+      body.services = data.services;
+    }
+
+    return body;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Sending...');
+    setIsSubmitting(true);
+    setStatus("");
 
     try {
-      const res = await fetch('/api/quote', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+      const requestBody = buildRequestBody(formData);
+
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestBody),
       });
 
       if (res.ok) {
-        setStatus('Message sent!');
+        setStatus("Message sent!");
         setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          dateandtime: '',
+          name: "",
+          email: "",
+          phone: "",
+          location: "",
+          company: "",
+          projectDetails: "",
           services: [],
-          projectDetails: '',
+          category: "solutions",
+          selection: "",
         });
       } else {
-        setStatus('Failed to send.');
+        setStatus("Failed to send.");
       }
     } catch (err) {
-      setStatus('Error occurred.');
+      console.error(err);
+      setStatus("Error occurred.");
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setStatus(""), 4000);
     }
   };
 
   const RequiredLabel = ({ htmlFor, children }) => (
     <label
       htmlFor={htmlFor}
-      className="block text-xs sm:text-sm font-medium text-[#092C4C] mb-1"
+      className="block text-sm font-medium text-[#092C4C] mb-1"
     >
       {children} <span className="text-orange-500">*</span>
     </label>
   );
 
   return (
-    <div className="w-full max-w-[550px] h-[600px] mx-auto bg-[#EEEEEE] p-4 sm:p-6 rounded-[12px]">
-      <h2 className="mb-4 text-[#092C4C] large-text-bold">
-        Request / Get a Quote:
-      </h2>
+    <div className="flex justify-center w-full px-4 mb-20">
+      <div className="bg-[#F5F5F5] w-full max-w-[1225px] p-6 sm:p-10 rounded-[16px] grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        {/* Left Title */}
+        <div className="text-[#092C4C] heading-3 max-sm:text-center leading-tight">
+          READY <br className="max-sm:hidden" /> TO GET <br className="max-sm:hidden" /> STARTED?
+        </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4 text-sm">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <RequiredLabel htmlFor="name">Full Name</RequiredLabel>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Enter your name and surname"
-              autoComplete="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full p-2 sm:p-3 text-sm bg-white rounded-[8px] placeholder:text-[#5C5C5C]"
-            />
+        {/* Form Section */}
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-5 px-5 text-sm w-[600px] max-sm:mr-8 max-sm:w-[310px]"
+        >
+          <h2 className="font-semibold large-text-bold text-[#092C4C]">
+            Request / Get a Quote:
+          </h2>
+
+          {/* Name & Email */}
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="w-full md:w-1/2">
+              <RequiredLabel htmlFor="name">Full Name</RequiredLabel>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full p-3 placeholder:text-[#5C5C5C] py-4 bg-white rounded-[12px]"
+              />
+            </div>
+            <div className="w-full md:w-1/2">
+              <RequiredLabel htmlFor="email">Email</RequiredLabel>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full p-3 placeholder:text-[#5C5C5C] py-4 bg-white rounded-[12px]"
+              />
+            </div>
           </div>
 
-          <div>
-            <RequiredLabel htmlFor="email">Email</RequiredLabel>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email address"
-              autoComplete="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full p-2 sm:p-3 text-sm bg-white rounded-[8px] placeholder:text-[#5C5C5C]"
-            />
+          {/* Phone & Location */}
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="w-full md:w-1/2">
+              <RequiredLabel htmlFor="phone">Phone Number</RequiredLabel>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full p-3 placeholder:text-[#5C5C5C] py-4 bg-white rounded-[12px]"
+              />
+            </div>
+            <div className="w-full md:w-1/2">
+              <RequiredLabel htmlFor="location">Location</RequiredLabel>
+              <input
+                type="text"
+                name="location"
+                id="location"
+                placeholder="Enter your location"
+                value={formData.location}
+                onChange={handleChange}
+                required
+                className="w-full p-3 placeholder:text-[#5C5C5C] py-4 bg-white rounded-[12px]"
+              />
+            </div>
           </div>
 
-          <div>
-            <RequiredLabel htmlFor="phone">Phone</RequiredLabel>
-            <input
-              type="tel"
-              name="phone"
-              id="phone"
-              placeholder="Enter your phone number"
-              autoComplete="tel"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="w-full p-2 sm:p-3 text-sm bg-white rounded-[8px] placeholder:text-[#5C5C5C]"
-            />
-          </div>
-
-          <div>
-            <RequiredLabel htmlFor="dateandtime">Date & Time</RequiredLabel>
-            <input
-              type="text"
-              name="dateandtime"
-              id="dateandtime"
-              placeholder="Enter your desired date and time"
-              autoComplete="organization"
-              value={formData.dateandtime}
-              onChange={handleChange}
-              required
-              className="w-full p-2 sm:p-3 text-sm bg-white rounded-[8px] placeholder:text-[#5C5C5C]"
-            />
-          </div>
+          {/* Company */}
           <div>
             <RequiredLabel htmlFor="company">Company</RequiredLabel>
             <input
               type="text"
               name="company"
               id="company"
-              placeholder="Enter your Orginizations name"
-              autoComplete="organization"
+              placeholder="Enter your company name"
               value={formData.company}
               onChange={handleChange}
               required
-              className="w-full p-2 sm:p-3 text-sm bg-white rounded-[8px] placeholder:text-[#5C5C5C]"
+              className="w-full p-3 placeholder:text-[#5C5C5C] py-4 bg-white rounded-[12px]"
             />
           </div>
+
+          {/* Category + Selection */}
+          <div className="space-y-2">
+            <div className="flex gap-6">
+              <label className="flex items-center gap-2 small-text-bold text-[#092C4C]">
+                <input
+                  type="radio"
+                  name="category"
+                  value="solutions"
+                  checked={formData.category === "solutions"}
+                  onChange={() => handleRadioChange("solutions")}
+                  className="accent-[#0F70B7] w-[20px] h-[20px]"
+                />
+                Solutions
+              </label>
+              <label className="flex items-center gap-2 small-text-bold text-[#092C4C]">
+                <input
+                  type="radio"
+                  name="category"
+                  value="services"
+                  checked={formData.category === "services"}
+                  onChange={() => handleRadioChange("services")}
+                  className="accent-[#0F70B7] w-[20px] h-[20px]"
+                />
+                Services
+              </label>
+            </div>
+
+            <div className="relative">
+              <select
+                id="selection"
+                name="selection"
+                value={formData.selection}
+                onChange={handleChange}
+                required
+                className="appearance-none w-full outline-1 outline-gray-300 focus:outline-2 focus:outline-[#0F70B7] rounded-md bg-white px-3.5 py-2 text-base text-gray-900 pr-10"
+              >
+                <option value="">Select {formData.category}</option>
+                {formData.category === "solutions" ? (
+                  <>
+                    <option value="Time attendance">Time attendance</option>
+                    <option value="Fire alarm">Fire alarm</option>
+                    <option value="AI">AI</option>
+                    <option value="Vehicle tracking">Vehicle tracking</option>
+                    <option value="UPS">UPS / Backup</option>
+                    <option value="Networking">Networking</option>
+                  </>
+                ) : (
+                  <>
+                    <option value="Branding & UI/UX">Branding & UI/UX</option>
+                    <option value="Ecommerce Solutions">Ecommerce Solutions</option>
+                    <option value="Product Development">Product Development</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                  </>
+                )}
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                <svg
+                  className="h-6 w-6 text-[#092C4C]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Project Details */}
           <div>
-            <RequiredLabel htmlFor="location">Location</RequiredLabel>
-            <input
-              type="text"
-              name="location"
-              id="location"
-              placeholder="Enter your Location"
-              autoComplete="organization"
-              value={formData.location}
+            <RequiredLabel htmlFor="projectDetails">Message</RequiredLabel>
+            <textarea
+              name="projectDetails"
+              id="projectDetails"
+              placeholder="Enter your message..."
+              value={formData.projectDetails}
               onChange={handleChange}
               required
-              className="w-full p-2 sm:p-3 text-sm bg-white rounded-[8px] placeholder:text-[#5C5C5C]"
+              className="w-full p-3 h-[128px] placeholder:text-[#5C5C5C] py-4 bg-white border-none rounded-[12px]"
             />
           </div>
-        </div>
 
-        <div>
-          <RequiredLabel htmlFor="services">Services</RequiredLabel>
-          <div className="flex flex-wrap gap-2 p-2 sm:p-3 rounded-[8px] bg-white">
-            {servicesList.map((service, i) => (
-              <button
-                type="button"
-                key={i}
-                onClick={() => handleServiceToggle(service)}
-                className={`px-3 py-0.5 rounded-full text-xs font-normal sm:text-sm border transition ${
-                  formData.services.includes(service)
-                    ? 'bg-[#0E5B96] text-white border-[#0E5B96]'
-                    : 'bg-[#F0F0F0] text-[#1A1A1A] border-gray-300'
-                }`}
-              >
-                {service}
-              </button>
-            ))}
-          </div>
-        </div>
+          {/* Submit Button with Spinner */}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full flex items-center justify-center gap-2 rounded-full bg-[#0E5B96] py-3 font-semibold text-white hover:bg-[#1c71b1] transition duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {isSubmitting && (
+              <span className="inline-block h-4 w-4 border-[2px] border-white border-t-transparent rounded-full animate-spin"></span>
+            )}
+            {isSubmitting ? "Sending..." : "Send"}
+          </button>
 
-        <div>
-          <RequiredLabel htmlFor="projectDetails">Project Details</RequiredLabel>
-          <textarea
-            name="projectDetails"
-            id="projectDetails"
-            autoComplete="off"
-            placeholder="Type your message here...."
-            value={formData.projectDetails}
-            onChange={handleChange}
-            required
-            className="w-full p-2 sm:p-3 h-[90px] sm:h-[110px] text-sm bg-white border-none rounded-[8px] placeholder:text-[#5C5C5C]"
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-[#0E5B96] text-white py-2 sm:py-3 rounded-full font-semibold hover:bg-[#1c70b0] transition text-sm sm:text-base"
-        >
-          Send Consultation
-        </button>
-
-        {status && (
-          <p className="text-xs text-center text-green-600 mt-2">{status}</p>
-        )}
-      </form>
+          {/* Status */}
+          {status && (
+            <p
+              aria-live="polite"
+              className={`mt-4 text-sm text-center ${
+                status === "Message sent!" ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              {status}
+            </p>
+          )}
+        </form>
+      </div>
     </div>
   );
 }

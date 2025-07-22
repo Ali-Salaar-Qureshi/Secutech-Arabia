@@ -5,7 +5,11 @@ function OurJourney() {
     <section className="m-[80px] max-sm:m-[40px]">
       <div className="flex flex-col">
         <div className="flex flex-row max-sm:flex-col gap-20">
-          <img src="/images/JourneyImage.png" alt="" className="h-auto w-auto"/>
+          <img
+            src="/images/JourneyImage.png"
+            alt=""
+            className="h-auto w-auto"
+          />
           <div className="w-[639px] max-sm:w-auto">
             <h3 className="heading-4 text-[#092C4C]">
               Our Journey – 20+ Years of
@@ -30,35 +34,27 @@ function OurJourney() {
               2030 & Beyond.
             </p>
             <div className="flex flex-row gap-[24px] mt-16 max-sm:flex-col max-sm:items-center">
-              <button className="bg-[#0E5B96] rounded-full px-[32px] py-[13px] hover:bg-[#116cb1] transition duration-300">
-                <span className="medium-text-bold text-white">View Our Services</span>
-              </button>
+              <a href="/services1">
+                <button className="bg-[#0E5B96] rounded-full px-[32px] py-[13px] hover:bg-[#116cb1] transition duration-300">
+                  <span className="medium-text-bold text-white">
+                    View Our Services
+                  </span>
+                </button>
+              </a>
               <a href="/contact">
-              <button className="border-[1px] text-[#0E5B96] border-[#0E5B96] rounded-full px-[40px] py-[13px] hover:bg-[#0E5B96] hover:text-white transition duration-300">
-                <span className="medium-text-bold " >Contact Us</span>
-              </button>
+                <button className="border-[1px] text-[#0E5B96] border-[#0E5B96] rounded-full px-[40px] py-[13px] hover:bg-[#0E5B96] hover:text-white transition duration-300">
+                  <span className="medium-text-bold ">Contact Us</span>
+                </button>
               </a>
             </div>
           </div>
         </div>
 
         <div className="flex flex-row gap-[24px] max-sm:flex-col items-center justify-center mt-25">
-            <Jcard
-            heading="2004"
-            detail="Founded in"
-            />
-            <Jcard
-            heading="150+"
-            detail="Happy clients"
-            />
-            <Jcard
-            heading="20+"
-            detail="Years of experience"
-            />
-            <Jcard
-            heading="25+"
-            detail="Trained staff"
-            />
+          <Jcard heading="2004" detail="Founded in" />
+          <Jcard heading="150+" detail="Happy clients" />
+          <Jcard heading="20+" detail="Years of experience" />
+          <Jcard heading="25+" detail="Trained staff" />
         </div>
       </div>
     </section>
