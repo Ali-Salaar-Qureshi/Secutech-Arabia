@@ -5,8 +5,8 @@ function Footer() {
         <div>
           {/* Links Column 1 */}
           <div className="flex flex-row gap-20 justify-between max-sm:text-center flex-wrap px-[100px] pt-[80px] max-sm:flex-col max-sm:px-2 max-sm:pt-10">
-            <div className="flex flex-row gap-20 max-sm:gap-4 px-">
-              <div className="max-sm:mx-auto">
+            <div className="flex flex-row w-[55%] max-sm:justify-center gap-20 max-sm:gap-3 max-sm:px-3  max-sm:w-full">
+              <div className="max-sm:mx-2">
                 <h1 className="normal-text-bold text-white">Our Services</h1>
                 <ul className="list-none small-text-regular space-y-3">
                   <li className="text-[#EEEEEE]">
@@ -65,13 +65,13 @@ function Footer() {
               </div>
             </div>
             {/* Awards Section */}
-            <div className="max-sm:mt-0 max-sm:mx-auto">
+            <div className="max-sm:mt-0 max-sm:w-[100%] max-sm:items-center max-sm:mx-auto ">
               <h1 className="normal-text-bold text-white mb-3 max-sm:text-center">
                 Awards & Certifications
               </h1>
-              <div className="flex flex-row gap-2 max-sm:justify-center">
-                <div className="flex flex-row mb-2 gap-2">
-                  <div className="w-[210px] h-[120px] bg-white rounded-[8px]">
+              <div className="flex flex-row w-full gap-2 max-sm:items-center max-sm: max-sm:w-full">
+                <div className="flex flex-row max-sm:items-center max-sm:w-[100%] mb-2 gap-2">
+                  <div className="w-[210px] h-[120px]  bg-white rounded-[8px]">
                     <img src="/images/award 1.jpg" className="w-full h-full rounded-[8px]" alt="" />
                   </div>
                   <div className="w-[180px] h-[120px] bg-white rounded-[8px]">
@@ -79,7 +79,7 @@ function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-row gap-2 max-sm:justify-center">
+              <div className="flex flex-row gap-2 max-sm:items-center max-sm:w-[100%]">
                 <div className="w-[120px] h-[170px] bg-white rounded-[8px]">
                   <img src="/images/award 3.png" className="w-full h-full rounded-[8px]" alt="" />
                 </div>

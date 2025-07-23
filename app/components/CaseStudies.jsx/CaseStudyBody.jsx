@@ -9,7 +9,7 @@ function CaseStudyBody() {
             alt=""
           />
           <a href="/docs/pdf1.pdf">
-            <div className="flex flex-row gap-0.5 absolute bottom-[10px] left-30 transform -translate-x-1/2">
+            <div className="flex flex-row gap-0.5 absolute bottom-[10px] left-30 max-sm:left-20 transform -translate-x-1/2">
               <p className="medium-text-regular text-[#BE1522] hover:text-[#d5434f] transition duration-300">
                 View Case Study
               </p>
@@ -54,7 +54,7 @@ function CaseStudyBody() {
             alt=""
           />
           <a href="/docs/pdf2.pdf">
-            <div className="flex flex-row gap-0.5 absolute bottom-[10px] left-30 transform -translate-x-1/2 ">
+            <div className="flex flex-row gap-0.5 absolute bottom-[10px] left-30 max-sm:left-20 transform -translate-x-1/2 ">
               <p className="medium-text-regular text-[#BE1522] hover:text-[#d5434f] transition duration-300">
                 View Case Study
               </p>
@@ -98,7 +98,7 @@ function CaseStudyBody() {
             alt=""
           />
           <a href="/docs/pdf3.pdf">
-            <div className="flex flex-row gap-0.5 absolute bottom-[10px] left-30 transform -translate-x-1/2">
+            <div className="flex flex-row gap-0.5 absolute bottom-[10px] left-30 max-sm:left-20 transform -translate-x-1/2">
               <p className="medium-text-regular text-[#BE1522] hover:text-[#d5434f] transition duration-300">
                 View Case Study
               </p>

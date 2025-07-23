@@ -5,7 +5,7 @@ import Footer from "../shared/Footer";
 
 function ContactUs(){
     return(
-        <main className="">
+        <main className="overflow-x-hidden">
             <NavBar />
             <ContactLanding />
             <ContactSection />

@@ -11,7 +11,7 @@ function OurLatestSoloutions() {
           Explore how our technologies address today’s most pressing security
           challenges with innovation, compliance, and efficiency.
         </p>
-        <div className="flex flex-row gap-10  max-sm:flex-col">
+        <div className="flex flex-row gap-10 max-sm:items-center max-sm:flex-col">
           <Card
             img="/images/Access control.png"
             alt="Access control images"
