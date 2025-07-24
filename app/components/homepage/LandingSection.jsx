@@ -48,7 +48,7 @@ function LandingSection() {
         </div>
 
         {/* BUTTONS */}
-        <div className="absolute top-[50%]  max-sm:top-[38%] ml-6 max-sm:ml-4 flex flex-row sm:flex-row gap-4 mt-4">
+        <div className="absolute top-[50%]  max-sm:top-[38%] ml-6 max-sm:ml-4 flex flex-row sm:flex-row gap-4 mt-10">
           <a href="/oursoloutions">
             <button className="rounded-full bg-[#BE1522]  border border-[#BE1522] hover:border-[#de3240] text-white font-bold hover:bg-[#de3240] transition duration-300 px-6 py-3 text-sm sm:text-base md:text-lg max-sm:text-[10px] max-sm:px-3 max-sm:py-1.5">
               Browse Our Solutions
