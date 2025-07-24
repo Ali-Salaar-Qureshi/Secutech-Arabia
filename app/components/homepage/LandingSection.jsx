@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 
 const images = [
   "/images/landing-slider/Frame 1.png",
@@ -19,23 +18,24 @@ const images = [
 
 function LandingSection() {
   return (
-    <div className="relative sm:mx-[10px] max-sm:px-[4%]">
+    <div className="relative w-full overflow-hidden">
       {/* Background Image */}
       <img
         src="/images/landing-background.png"
-        alt="landing-background image"
-        className="w-[100%] h-auto max-sm:px-[2%] max-sm:w-[100%] px-[100px] object-cover"
+        alt="landing-background"
+        className="w-full h-auto object-cover sm:px-[100px] max-sm:px-[15px]"
       />
 
       {/* OVERLAYED MAIN HEADING */}
-      <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-start px-[7vw] pt-[7vw] pb-0 z-10">
-        <div className="absolute top-[200px] mb-8 mt-4">
-          <h1 className="heading-1 text-white drop-shadow-lg">
-            20 YEARS OF INNOVATION<br />
+      <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center z-10 px-[7vw] pt-[7vw] max-sm:top-0">
+        <div className="absolute top-[20%] max-sm:top-[12%] sm:top-[200px] ml-6 max-sm:ml-4">
+          <h1 className="text-white font-bold drop-shadow-lg text-2xl sm:text-4xl md:text-5xl leading-tight">
+            20 YEARS OF INNOVATION
+            <br />
             IN SECURITY &<br />
             <span className="bg-gradient-to-r from-[#1CB5E0] to-[#BE1522] bg-clip-text text-transparent">
               <Typewriter
-                words={['DIGITAL SOLUTIONS']}
+                words={["DIGITAL SOLUTIONS"]}
                 loop={0}
                 cursor
                 cursorStyle="|"
@@ -46,19 +46,16 @@ function LandingSection() {
             </span>
           </h1>
         </div>
+
         {/* BUTTONS */}
-        <div className="flex flex-row gap-4 mt-2">
+        <div className="absolute top-[50%]  max-sm:top-[38%] ml-6 max-sm:ml-4 flex flex-row sm:flex-row gap-4 mt-4">
           <a href="/oursoloutions">
-            <button
-              className="rounded-full bg-[#BE1522] text-white font-semibold hover:bg-[#de3240] transition duration-300 ease-in-out px-6 py-3 text-sm sm:px-7 sm:py-3.5 sm:text-base md:px-8 md:py-4 md:text-lg max-sm:px-4 max-sm:py-2 max-sm:text-xs"
-            >
+            <button className="rounded-full bg-[#BE1522]  border border-[#BE1522] hover:border-[#de3240] text-white font-bold hover:bg-[#de3240] transition duration-300 px-6 py-3 text-sm sm:text-base md:text-lg max-sm:text-[10px] max-sm:px-3 max-sm:py-1.5">
               Browse Our Solutions
             </button>
           </a>
           <a href="/contact">
-            <button
-              className="rounded-full border-[1.8px] border-white text-white font-semibold hover:border-[#BE1522] hover:bg-[#BE1522] transition duration-300 ease-in-out px-6 py-3 text-sm sm:px-7 sm:py-3.5 sm:text-base md:px-8 md:py-4 md:text-lg max-sm:px-4 max-sm:py-2 max-sm:text-xs"
-            >
+            <button className="rounded-full border border-white text-white font-bold hover:border-[#BE1522] hover:bg-[#BE1522] transition duration-300 px-6 py-3 text-sm sm:text-base md:text-lg max-sm:text-[10px] max-sm:px-3 max-sm:py-1.5">
               Book Consultation
             </button>
           </a>
@@ -66,35 +63,35 @@ function LandingSection() {
       </div>
 
       {/* SLIDER + HEADING */}
-      <div
-        className="absolute bottom-[10px] left-14 w-[80%] max-w-[600px] z-10 sm:left-28 max-sm:static max-sm:w-full max-sm:mt-2 max-sm:px-2"
-      >
-        {/* Gradient — desktop right only */}
-        <div className="absolute top-0 right-0 h-full w-[60px] z-20 pointer-events-none bg-gradient-to-l from-white via-white/70 to-transparent max-sm:hidden" />
-        <h1
-          className="heading-5 text-[#092c4c] z-30 mb-2 leading-snug break-words sm:text-lg sm:max-w-[90%] max-sm:text-base max-sm:text-left max-sm:pl-2 max-sm:-mt-2 max-sm:w-55 py-1"
-        >
-          Our Technology Partners:
-        </h1>
-        <Marquee
-          speed={60}
-          pauseOnHover={false}
-          gradient={true}
-          gradientColor={[255, 255, 255]}
-          gradientWidth={40}
-          direction="right"
-          className="z-10 max-sm:px-2"
-        >
-          {images.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={`img-${index}`}
-              className="h-[58px] w-[144px] mx-4 rounded-xl sm:h-[53px] sm:w-[125px] max-sm:h-[40px] max-sm:w-[100px] max-sm:mx-2"
-            />
-          ))}
-        </Marquee>
-      </div>
+<div className="relative z-10 mt-6 sm:absolute sm:bottom-4 sm:left-28 left-4 right-4 sm:w-[80%] max-w-[600px]">
+  {/* Gradient — desktop right only */}
+  <div className="absolute top-0 right-0 h-full w-[60px] bg-gradient-to-l from-white via-white/70 to-transparent z-20 pointer-events-none max-sm:hidden" />
+  
+  <h2 className="text-[#092c4c] font-bold text-base sm:text-lg mb-2 leading-snug z-30">
+    Our Technology Partners:
+  </h2>
+
+  <Marquee
+    speed={60}
+    pauseOnHover={false}
+    gradient={true}
+    gradientColor={[255, 255, 255]}
+    gradientWidth={40}
+    direction="right"
+    className="z-10"
+  >
+    {images.map((src, index) => (
+      <img
+        key={index}
+        src={src}
+        alt={`img-${index}`}
+        className="h-[40px] sm:h-[53px] w-auto mx-2 sm:mx-4 rounded-xl"
+      />
+    ))}
+  </Marquee>
+</div>
+
+
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import Card from "./Cards";
 
+
 function OurLatestSoloutions() {
   return (
     <section className="max-sm:w-[100%] sm:mx-[60px] max-sm:px-[4%]  ">

@@ -1,4 +1,15 @@
+
+'use client';
+import { useState } from "react";
+import Modal from "../shared/CtaModal";
+import ContactFormEmail from "../contactpage/ContactFormEmail";
+
 function Card(props) {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className="flex flex-col items-center justify-around w-[397px] h-[545px] bg-[#0C2945] rounded-[8px] max-sm:w-[360px]">
       <img src={props.img} alt={props.alt} className="w-[395px] h-[241px] px-4 py-4" />
@@ -9,7 +20,7 @@ function Card(props) {
         {props.text}
       </p>
 
-      <button className="group mb-4 flex py-[13px] pl-[24px] pr-[20px] rounded-[100px] border-[2px] border-[#e41e2ffd] hover:border-[#e41e2f11] hover:bg-[#e41e2fc2] transition duration-300 hover:text-white items-start">
+      <button onClick={openModal} className="group mb-4 flex py-[13px] pl-[24px] pr-[20px] rounded-[100px] border-[2px] border-[#e41e2ffd] hover:border-[#e41e2f11] hover:bg-[#e41e2fc2] transition duration-300 hover:text-white items-start">
         <div className="flex flex-row text-center">
           <span className="text-[#E41E2D] text-medium-regular group-hover:text-white transition duration-300 font-medium">
             Request Service
@@ -21,6 +32,9 @@ function Card(props) {
           />
         </div>
       </button>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+          <ContactFormEmail />
+      </Modal>
     </div>
   );
 }

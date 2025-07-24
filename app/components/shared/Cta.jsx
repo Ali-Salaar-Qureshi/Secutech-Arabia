@@ -1,12 +1,11 @@
 'use client';
-
 import { useState } from "react";
 import Modal from "./CtaModal";
 import ConsultationForm from "./ConsultationForm";
 
 function CallToAction() {
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 

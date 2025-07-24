@@ -30,7 +30,7 @@ export default function NavBar() {
   ];
 
   return (
-    <header className="mx-[20px] md:mx-[100px] mt-8 mb-6 z-[9999] max-sm:w-[85%]">
+    <header className="mx-[20px] md:mx-[100px] mt-8 mb-6 z-[9999] max-sm:w-[85%] ">
       <nav className="flex justify-between items-center">
         {/* Logo */}
         <img
@@ -207,7 +207,7 @@ export default function NavBar() {
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                     className="mt-3 w-50 rounded-full text-white py-[13px] px-[30px]"
                   >
-                    Contact Us
+                    Start a Project
                   </motion.button>
                 </a>
               </li>
